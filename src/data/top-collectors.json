@@ -1,0 +1,422 @@
+[
+  {
+    "node": {
+      "slug": "cryptopunks",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MjU2Mw==",
+      "name": "CryptoPunks",
+      "logo": "https://lh3.googleusercontent.com/BdxvLseXcfl57BiuQcQYdJ64v-aI8din7WPk0Pgo3qQFhAUH-B6i-dCqqc_mCkRIzULmwzwecnohLhrcH8A9mpWIZqA7ygc52Sr81hE=s120",
+      "createdDate": "2019-04-26T22:13:09.691572",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": null,
+        "oneDayChange": 410.4,
+        "oneDayVolume": { "unit": "410.399999999999977263" },
+        "sevenDayChange": -0.8967052537465984,
+        "sevenDayVolume": { "unit": "1941.170000000000300133" },
+        "thirtyDayChange": 0.18337288185599804,
+        "thirtyDayVolume": { "unit": "35478.794390000039129518" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "otherdeed",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTQwNzcyNTU=",
+      "name": "Otherdeed for Otherside",
+      "logo": "https://lh3.googleusercontent.com/yIm-M5-BpSDdTEIJRt5D6xphizhIdozXjqSITgK4phWq7MmAU3qE7Nw7POGCiPGyhtJ3ZFP8iJ29TFl-RLcGBWX5qI4-ZcnCPcsY4zI=s120",
+      "createdDate": "2022-04-29T13:58:31.855081",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "2.458" },
+        "oneDayChange": -0.3212620882577738,
+        "oneDayVolume": { "unit": "376.988021530000082748" },
+        "sevenDayChange": -0.3877106868751828,
+        "sevenDayVolume": { "unit": "3748.784560755396796594" },
+        "thirtyDayChange": 0.012615490921657781,
+        "thirtyDayVolume": { "unit": "21856.219898432882473571" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "boredapeyachtclub",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+      "name": "Bored Ape Yacht Club",
+      "logo": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+      "createdDate": "2021-04-22T23:14:03.967121",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "86" },
+        "oneDayChange": 1.2743472352510437,
+        "oneDayVolume": { "unit": "592.301199999999994361" },
+        "sevenDayChange": -0.0750988757331324,
+        "sevenDayVolume": { "unit": "3712.843346780001411389" },
+        "thirtyDayChange": -0.45962781395589436,
+        "thirtyDayVolume": { "unit": "21560.216090439997060457" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "ens",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MzA3Mg==",
+      "name": "ENS: Ethereum Name Service",
+      "logo": "https://lh3.googleusercontent.com/0cOqWoYA7xL9CkUjGlxsjreSYBdrUBE0c6EO1COG4XE8UeP-Z30ckqUNiL872zHQHQU5MUNMNhfDpyXIP17hRSC5HQ=s60",
+      "createdDate": "2019-05-08T21:59:36.282454",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "1E-18" },
+        "oneDayChange": -0.4965986667858117,
+        "oneDayVolume": { "unit": "293.87818485806752733" },
+        "sevenDayChange": 0.04935488879509114,
+        "sevenDayVolume": { "unit": "1973.402262255354571607" },
+        "thirtyDayChange": 2.4400488370171685,
+        "thirtyDayVolume": { "unit": "13590.701602165327130933" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "art-blocks",
+      "isCategory": true,
+      "id": "Q29sbGVjdGlvblR5cGU6MTM2NTM=",
+      "name": "Art Blocks Curated",
+      "logo": "https://lh3.googleusercontent.com/GwnosrkaneKGEkWySxvTSzZ5bEUjWkRuQzLSNfrpgy2-gxYjoR3m5PohLT9Fzy0p1tohajZ1g-LFfF_ZLnS1GqlPNHPUaKUbDhbf=s120",
+      "createdDate": "2020-11-27T15:58:37.366034",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": null,
+        "oneDayChange": -0.6539765956321388,
+        "oneDayVolume": { "unit": "44.483800000000002228" },
+        "sevenDayChange": -0.7551011801741384,
+        "sevenDayVolume": { "unit": "1174.416200000001708759" },
+        "thirtyDayChange": 1.2293731523064437,
+        "thirtyDayVolume": { "unit": "13182.686325141732595512" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "mutant-ape-yacht-club",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTE2Njc5NA==",
+      "name": "Mutant Ape Yacht Club",
+      "logo": "https://lh3.googleusercontent.com/lHexKRMpw-aoSyB1WdFBff5yfANLReFxHzt1DOj_sg7mS14yARpuvYcUtsyyx-Nkpk6WTcUPFoG53VnLJezYi8hAs0OxNZwlw6Y-dmI=s120",
+      "createdDate": "2021-08-29T00:41:59.548458",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "16.4" },
+        "oneDayChange": -0.5333050580847939,
+        "oneDayVolume": { "unit": "149.131999999999976581" },
+        "sevenDayChange": -0.18506110970460146,
+        "sevenDayVolume": { "unit": "2026.308471000000281492" },
+        "thirtyDayChange": -0.303888958361048,
+        "thirtyDayVolume": { "unit": "12752.428270899987182929" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "thesaudis",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTc3ODcxODI=",
+      "name": "The Saudis",
+      "logo": "https://openseauserdata.com/files/2672eeeeaa51eaa4bf32b5d0280c0e3d.png",
+      "createdDate": "2022-07-09T03:50:39.286647",
+      "isVerified": false,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "0.4" },
+        "oneDayChange": -0.15555593266199919,
+        "oneDayVolume": { "unit": "37.619587999999993144" },
+        "sevenDayChange": -0.6506270582216772,
+        "sevenDayVolume": { "unit": "490.757834617000128219" },
+        "thirtyDayChange": 0.0,
+        "thirtyDayVolume": { "unit": "8700.92266182554885745" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "proof-moonbirds",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTMzNjAzMjU=",
+      "name": "Moonbirds",
+      "logo": "https://lh3.googleusercontent.com/H-eyNE1MwL5ohL-tCfn_Xa1Sl9M9B4612tLYeUlQubzt4ewhr4huJIR5OLuyO3Z5PpJFSwdm7rq-TikAh7f5eUw338A2cy6HRH75=s120",
+      "createdDate": "2022-04-15T17:27:27.561334",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "19.98" },
+        "oneDayChange": 1.851530190239868,
+        "oneDayVolume": { "unit": "206.849999999999994316" },
+        "sevenDayChange": 0.3746267650818104,
+        "sevenDayVolume": { "unit": "1257.359999999999899956" },
+        "thirtyDayChange": -0.15757408117759233,
+        "thirtyDayVolume": { "unit": "7731.565023611104152224" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "moonbirds-oddities",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTUyNzAyMDU=",
+      "name": "Moonbirds Oddities",
+      "logo": "https://lh3.googleusercontent.com/M3yJrT9TRLmE8sZb8TjyAbDJYBCoCWFFXGXd61G7d5pDESUPfGVocjmg4V9JlyGCr9ENri36cisKdagm6h86548W5hmCva2kQ2rC_Q=s120",
+      "createdDate": "2022-05-22T12:24:07.459755",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "1.35" },
+        "oneDayChange": -0.4422183035372746,
+        "oneDayVolume": { "unit": "89.64699999999999136" },
+        "sevenDayChange": 2.2239860176205197,
+        "sevenDayVolume": { "unit": "4046.604368525840982329" },
+        "thirtyDayChange": 1.6969372332226422,
+        "thirtyDayVolume": { "unit": "7460.142317470252237399" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "clonex",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MzU2OTMyMg==",
+      "name": "CLONE X - X TAKASHI MURAKAMI",
+      "logo": "https://lh3.googleusercontent.com/XN0XuD8Uh3jyRWNtPTFeXJg_ht8m5ofDx6aHklOiy4amhFuWUa0JaR6It49AH8tlnYS386Q0TW_-Lmedn0UET_ko1a3CbJGeu5iHMg=s120",
+      "createdDate": "2021-12-12T18:32:58.410707",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "9.1" },
+        "oneDayChange": 0.20797324312288928,
+        "oneDayVolume": { "unit": "214.571200000000004593" },
+        "sevenDayChange": 0.058533255886679215,
+        "sevenDayVolume": { "unit": "1388.096099999999751162" },
+        "thirtyDayChange": -0.44870160907246814,
+        "thirtyDayVolume": { "unit": "6507.01178997999522835" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "moonrunnersnft",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTcwODk5OTQ=",
+      "name": "Moonrunners Official",
+      "logo": "https://openseauserdata.com/files/8bb5a3faa8de2761782f03b9ecc8e785.png",
+      "createdDate": "2022-06-23T16:10:05.862065",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "0.0795" },
+        "oneDayChange": 0.08856935737553259,
+        "oneDayVolume": { "unit": "8.290859900000000948" },
+        "sevenDayChange": -0.26983905225899374,
+        "sevenDayVolume": { "unit": "128.882558789999848159" },
+        "thirtyDayChange": 1.4480580234695966,
+        "thirtyDayVolume": { "unit": "6109.558832223749959667" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "thepossessed",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTczODkyNjc=",
+      "name": "The Possessed",
+      "logo": "https://openseauserdata.com/files/aabc89aee6e21ea107f77c783c96e011.gif",
+      "createdDate": "2022-06-29T16:38:10.828045",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "0.145" },
+        "oneDayChange": 0.10929377056798639,
+        "oneDayVolume": { "unit": "10.668189010000004302" },
+        "sevenDayChange": -0.6242325203086047,
+        "sevenDayVolume": { "unit": "117.055776262444723557" },
+        "thirtyDayChange": 0.0,
+        "thirtyDayVolume": { "unit": "5909.648237551500642439" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "thepotatoz",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTgzMjA5MDI=",
+      "name": "The Potatoz",
+      "logo": "https://openseauserdata.com/files/7f3cd1b5f71225f4aab4efab5542f253.gif",
+      "createdDate": "2022-07-21T03:21:35.182770",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "0.671" },
+        "oneDayChange": -0.5541794683827583,
+        "oneDayVolume": { "unit": "193.829298900000026151" },
+        "sevenDayChange": 0.0,
+        "sevenDayVolume": { "unit": "5522.336571831862784165" },
+        "thirtyDayChange": 0.0,
+        "thirtyDayVolume": { "unit": "5522.336571831862784165" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "doodles-official",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MjIyNDM5MA==",
+      "name": "Doodles",
+      "logo": "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      "createdDate": "2021-10-17T13:00:47.419945",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "9.75" },
+        "oneDayChange": -0.059327736232814815,
+        "oneDayVolume": { "unit": "61.511499999999998067" },
+        "sevenDayChange": 0.20545257062498332,
+        "sevenDayVolume": { "unit": "866.998300000000313048" },
+        "thirtyDayChange": -0.34796593988392016,
+        "thirtyDayVolume": { "unit": "5099.423187249995862658" }
+      }
+    }
+  },
+  {
+    "node": {
+      "slug": "goblintownwtf",
+      "isCategory": false,
+      "id": "Q29sbGVjdGlvblR5cGU6MTUxMzA3NjQ=",
+      "name": "goblintown.wtf",
+      "logo": "https://lh3.googleusercontent.com/cb_wdEAmvry_noTfeuQzhqKpghhZWQ_sEhuGS9swM03UM8QMEVJrndu0ZRdLFgGVqEPeCUzOHGTUllxug9U3xdvt0bES6VFdkRCKPqg=s120",
+      "createdDate": "2022-05-19T16:36:48.568970",
+      "isVerified": true,
+      "nativePaymentAsset": {
+        "symbol": "ETH",
+        "asset": {
+          "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+          "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+        },
+        "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+      },
+      "statsV2": {
+        "floorPrice": { "unit": "2.5" },
+        "oneDayChange": -0.1019300858090155,
+        "oneDayVolume": { "unit": "87.327599999999989677" },
+        "sevenDayChange": -0.5706216801891897,
+        "sevenDayVolume": { "unit": "705.488630999899669405" },
+        "thirtyDayChange": -0.8479873723443543,
+        "thirtyDayVolume": { "unit": "4668.85259899988250254" }
+      }
+    }
+  }
+]

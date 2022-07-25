@@ -1,0 +1,43 @@
+.top-collector
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 16px
+  width: 360px
+  padding: 16px
+  border-radius: 10px
+  transition: background-color 0.4s ease-in-out
+  font-size: 14px
+
+  &:hover
+    background-color: #262b2f
+
+  &__rank
+    font-size: 16px
+    font-weight: 600
+
+  &__avatar
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    object-fit: cover
+    background-color: rgba(#fff, .05)
+    flex-shrink: 0
+
+  &__price
+    display: flex
+    align-items: center
+    gap: 4px
+
+    span
+      font-weight: 600
+
+    svg
+      height: 14px
+      width: 14px
+
+  &__change
+    &--success
+      color: var(--color-success)
+    &--danger
+      color: var(--color-danger)
