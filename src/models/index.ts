@@ -8,3 +8,10 @@ export interface Collector {
   volume: number
   volumeChange: number
 }
+
+export interface Category {
+  id: string
+  slug: string
+  name: string
+  image: string
+}
