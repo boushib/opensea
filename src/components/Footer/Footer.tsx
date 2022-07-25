@@ -121,7 +121,7 @@ const Footer = () => (
       <div className="footer__copy">
         &copy; 2018 - {new Date().getFullYear()} Ozone Networks, Inc
         <div className="footer__copy__menu">
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/privacy-policy">Privacy policy</Link>
           <Link to="/terms-of-use">Terms of use</Link>
         </div>
       </div>
