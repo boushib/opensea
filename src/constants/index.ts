@@ -165,3 +165,61 @@ export const TOP_COLLECTORS = [
     volumeChange: -0.1019300858090155,
   },
 ]
+
+export const CATEGORIES = [
+  {
+    id: '9da4506f-e164-4e75-85f6-e630d997787d',
+    slug: 'art',
+    name: 'Art',
+    image: 'https://opensea.io/static/images/categories/art.png',
+  },
+  {
+    id: '981637a1-8ec4-4d29-a2ec-7dd27fa419ab',
+    slug: 'collectibles',
+    name: 'Collectibles',
+    image: 'https://opensea.io/static/images/categories/collectibles.png',
+  },
+  {
+    id: 'b5421d67-4d59-4389-a81a-8a8598316d82',
+    slug: 'domain-names',
+    name: 'Domain Names',
+    image: 'https://opensea.io/static/images/categories/domain-names.png',
+  },
+  {
+    id: 'ac25959c-af17-49e5-98ad-962bd4b8a7c2',
+    slug: 'music',
+    name: 'Music',
+    image: 'https://opensea.io/static/images/categories/music.png',
+  },
+  {
+    id: '923bbf63-fa5c-4ae1-80fd-08d2e0cc49ed',
+    slug: 'photography',
+    name: 'Photography',
+    image:
+      'https://opensea.io/static/images/categories/photography-category.png',
+  },
+  {
+    id: '1105fcfe-9a0c-4563-a90c-b5e481370a24',
+    slug: 'sports',
+    name: 'Sports',
+    image: 'https://opensea.io/static/images/categories/sports.png',
+  },
+  {
+    id: '5ea020c8-2290-45ec-b1c6-a40c1de778ae',
+    slug: 'trading-cards',
+    name: 'Trading Cards',
+    image: 'https://opensea.io/static/images/categories/trading-cards.png',
+  },
+  {
+    id: 'c5216baa-6eb1-4204-9bd4-72e3bf7408a3',
+    slug: 'utility',
+    name: 'Utility',
+    image: 'https://opensea.io/static/images/categories/utility.png',
+  },
+  {
+    id: '0bd91b4e-16fa-4279-8185-ea43c8143524',
+    slug: 'virtual-worlds',
+    name: 'Virtual Worlds',
+    image: 'https://opensea.io/static/images/categories/virtual-worlds.png',
+  },
+]
