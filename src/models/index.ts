@@ -15,3 +15,10 @@ export interface Category {
   name: string
   image: string
 }
+
+export interface NFTItem {
+  id: string
+  image: string
+  tokenId: number
+  lastSale: number
+}

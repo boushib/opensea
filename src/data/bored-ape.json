@@ -1,0 +1,1864 @@
+[
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTMyMDM0",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "6.64" },
+          "perUnitPriceType": { "unit": "6.64" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-24T20:10:06",
+          "closedAt": "2022-08-18T19:41:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAyNjIzMzkzOQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/f59cafb360c848f52263d99f50c853c8.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/f59cafb360c848f52263d99f50c853c8.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "81000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6NzIwMjUzNDE5NzYxNjk5NTc3MjYzNTg3MTAxNzY5OTQ2NzkyOTM="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 52,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "2032",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "2032",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTMyMDM0"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjA="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTQwODgy",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "0.666" },
+          "perUnitPriceType": { "unit": "0.666" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-06-04T02:04:02",
+          "closedAt": "2022-11-10T00:06:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTc3NjIyNTU1OQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/c74a2b1c76352af78772426a069c1cc2.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/c74a2b1c76352af78772426a069c1cc2.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "89900000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MTgxMDM5MjE2ODg2NzM0OTg4NjI0NDcwMzYyODQ0MzY5MzE5OTMx"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 62,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "7607",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "7607",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTQwODgy"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTQxOTM4",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "160" },
+          "perUnitPriceType": { "unit": "160" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-05-31T19:54:02.204720",
+          "closedAt": "2022-11-27T19:53:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTcwMTczNzQ1Mw=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/ee0d268c756f5c9b34906e7d164188e1.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/ee0d268c756f5c9b34906e7d164188e1.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "95000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MjU0NDc1MjY2NDEyMDg3NDQ5NDUyMjAwNDYzMTQxNzI2NTQwMDgz"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 126,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "8419",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "8419",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTQxOTM4"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjI="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM3NzM0",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "160" },
+          "perUnitPriceType": { "unit": "160" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-06-01T06:21:54.819003",
+          "closedAt": "2022-11-28T06:21:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTcxNTAzOTA4Ng=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/627876cfbe8076764bb5679edd97dedd.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/627876cfbe8076764bb5679edd97dedd.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "80010000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjk1NTQyMTk3OTI5NzY3NzQ5OTUyOTk2NDg1ODc1MjkwODg0ODMz"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 47,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "5474",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "5474",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM3NzM0"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjM="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM4Mzk1",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "6.64" },
+          "perUnitPriceType": { "unit": "6.64" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-24T19:35:54",
+          "closedAt": "2022-08-18T18:07:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAyNTczMzc3NA=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/bee163dfe6f9e386507587c1234060fe.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/bee163dfe6f9e386507587c1234060fe.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "80010100000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MjQ3MzYwNDU0ODE3NzcwNjQxOTk4NzcwNTU3NTI1NzAzMjYyMjI1"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 96,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "5930",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "5930",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM4Mzk1"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjQ="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTIxOTkz",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "30" },
+          "perUnitPriceType": { "unit": "30" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-25T09:14:14",
+          "closedAt": "2023-02-25T15:15:53",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAzNzE0MjE3NQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/282f2571f72e2f4c6597dc36885923b8.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/282f2571f72e2f4c6597dc36885923b8.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "87500000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MjU2Mzk2NjY2NDM4MDYyMzM5NTY0MjY0Nzk4Nzg1NjY0ODUxMTE="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 75,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "858",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "858",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTIxOTkz"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjU="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM0NTc1",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "7.33" },
+          "perUnitPriceType": { "unit": "7.33" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-24T10:55:33",
+          "closedAt": "2022-07-27T10:55:06",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE2NTAzMTU4NQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/adda941c84606c437484948e122cda40.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/adda941c84606c437484948e122cda40.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "87770000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MzA1MDQ4MTkzMDQ2MDQxMjQzNzQyNzY4MTUzMDEyNTY0MDQxNzcy"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 85,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "3264",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "3264",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM0NTc1"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjY="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTQwMTUx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": {
+          "priceType": {
+            "eth": "86.839",
+            "unit": "86.839",
+            "usd": "120310.224160000004776145"
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE3NDAzNDY2Mw==",
+          "orderType": "BASIC",
+          "maker": {
+            "address": "0x2137213d50207edfd92bcf4cf7ef9e491a155357",
+            "id": "QWNjb3VudFR5cGU6MjYwMDM4MTg3"
+          },
+          "perUnitPriceType": { "unit": "86.839" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-26T12:23:12",
+          "closedAt": "2022-08-25T10:08:44",
+          "payment": {
+            "symbol": "ETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          "relayId": "T3JkZXJWMlR5cGU6NjE3NDAzNDY2Mw=="
+        },
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "0.26" },
+          "perUnitPriceType": { "unit": "0.26" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-26T04:49:34",
+          "closedAt": "2022-07-29T04:46:13",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE3Mjc4NDMyMQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/40dd9773f0af35eff0873817eb1bcf08.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/40dd9773f0af35eff0873817eb1bcf08.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "80011100000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6NTQ5NzI3NDk1NzMwNzIxMDg3Nzg2MTU3MDMyOTU5MDAzNDQ0MTQ="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 123,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "7139",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "7139",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTQwMTUx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjc="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTMzMjYx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": {
+          "priceType": {
+            "eth": "196.42",
+            "unit": "196.42",
+            "usd": "272128.12480000001080310"
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE2NzQ3NjAwMw==",
+          "orderType": "BASIC",
+          "maker": {
+            "address": "0x6a4c4695428d1bb3fac49614dfcf390bc78facfe",
+            "id": "QWNjb3VudFR5cGU6NzU3MjM3Mg=="
+          },
+          "perUnitPriceType": { "unit": "196.42" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-24T23:25:42",
+          "closedAt": "2022-10-22T23:25:42",
+          "payment": {
+            "symbol": "ETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          "relayId": "T3JkZXJWMlR5cGU6NjE2NzQ3NjAwMw=="
+        },
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "9.15" },
+          "perUnitPriceType": { "unit": "9.15" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-23T11:09:47",
+          "closedAt": "2022-07-28T10:41:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAwMTkxNjUzNQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/f384ce5a50ea64ad4c35a3c8202ebb89.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/f384ce5a50ea64ad4c35a3c8202ebb89.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "120426900000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjc0NzU1NzAxNzY1NTAzNjExMTY5NTI0OTI1MDAzMjEwODk5MTc5"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 38,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "2643",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "2643",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTMzMjYx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjg="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM5Njgz",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "0.225" },
+          "perUnitPriceType": { "unit": "0.225" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-06-08T11:08:32",
+          "closedAt": "2022-12-03T11:39:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTg0MDc2OTIyMQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/6cf4929b95e77677098c65f511e443f3.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/6cf4929b95e77677098c65f511e443f3.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "140000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6OTIxNTA2MTcwNjUxMTg2NDUzODYzODEyMjg4MTQyNTU1MDQ5"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 136,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "6775",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "6775",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM5Njgz"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjk="
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTIwNzYw",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "0.1" },
+          "perUnitPriceType": { "unit": "0.1" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-23T11:46:24",
+          "closedAt": "2022-08-23T11:45:57",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE2MDc4OTMzNA=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/8d625952a863680de6b255c9906d5bc3.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/8d625952a863680de6b255c9906d5bc3.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "88900000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MjUxNzc0NzM5OTMwODQ2NDM0NTczMTUyMjg2Mjc5OTUzMTY0MDgy"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 50,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "813",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "813",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTIwNzYw"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEw"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM2OTU2",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": {
+          "priceType": {
+            "eth": "104.99",
+            "unit": "104.99",
+            "usd": "145457.34560000000577445"
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE2NjM5MjQyMg==",
+          "orderType": "BASIC",
+          "maker": {
+            "address": "0xe64fc2ec479fbaf11a2865102255e1f044fa72cc",
+            "id": "QWNjb3VudFR5cGU6Mjg4NzEzODcz"
+          },
+          "perUnitPriceType": { "unit": "104.99" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-24T17:54:52",
+          "closedAt": "2022-07-27T17:54:52",
+          "payment": {
+            "symbol": "ETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          "relayId": "T3JkZXJWMlR5cGU6NjE2NjM5MjQyMg=="
+        },
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "200" },
+          "perUnitPriceType": { "unit": "200" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-05-23T06:56:56.298184",
+          "closedAt": "2022-08-25T07:26:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTUxMTM3NjY1OQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/4567ba2fc7a8be8ee1f10a799f6859ec.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/4567ba2fc7a8be8ee1f10a799f6859ec.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "88000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6NDQzNDYxODc0MzE1MTk5NjE3MDMyMDAzNjcyNzI5OTczNzQzNDk="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 161,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "4963",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "4963",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM2OTU2"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEx"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM1NTAw",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "160" },
+          "perUnitPriceType": { "unit": "160" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-06-01T12:20:00.070831",
+          "closedAt": "2022-11-28T12:19:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTcyMjY3MTk5Mg=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/6a5a016dee13c61fb262aa8a12821a9b.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/6a5a016dee13c61fb262aa8a12821a9b.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "99990000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjg0NDg5Njg4MTM5NDM4MDgxNTM3NDQ3MTMyMjg5OTM2ODc0MDk="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 142,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "3946",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "3946",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM1NTAw"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEy"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTMyNTUx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": { "bestAskV2": null, "bestBidV2": null },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/ebd300c5c448586e877ad285adad31c8.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/ebd300c5c448586e877ad285adad31c8.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "83000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MTgwNDA2MDk5ODY0MzA3Mjg2Mjk3NTY4ODk1NjU5Nzc5Mzc1MDQ3"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 78,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "2251",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "2251",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTMyNTUx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjEz"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM2NzIx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": { "bestAskV2": null, "bestBidV2": null },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/aff32b71547bf4302a408742c4faa4a9.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/aff32b71547bf4302a408742c4faa4a9.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "120000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6Mjg1MTUzNjI3Njc4MTgxOTkyODc5NTA4MTQ5Nzg5MDYyNDI5OQ=="
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 85,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "4814",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "4814",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM2NzIx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE0"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM2MzAx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "160" },
+          "perUnitPriceType": { "unit": "160" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-05-31T18:18:45.750643",
+          "closedAt": "2022-11-27T18:18:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTY5OTM2MTA5Mw=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/8c0dfce02cdb7e1a4de9fa6ef831e0ea.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/8c0dfce02cdb7e1a4de9fa6ef831e0ea.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "symbol": "ETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "quantity": "92000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MzIzMTI1MjIyMDQ3MTQzMzQzNTEzOTIxNDgxNjU2ODk2ODMwMDA1"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 34,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "4506",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "4506",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM2MzAx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE1"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM3MTkx",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": {
+          "priceType": {
+            "eth": "93",
+            "unit": "93",
+            "usd": "128845.920000000005115"
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE1Nzk5NzAzMg==",
+          "orderType": "BASIC",
+          "maker": {
+            "address": "0x18599718e19e294dc19c7261129d3595a15d9c51",
+            "id": "QWNjb3VudFR5cGU6NDU2MzUwMjU0"
+          },
+          "perUnitPriceType": { "unit": "93" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-22T19:31:27",
+          "closedAt": "2022-07-29T19:31:27",
+          "payment": {
+            "symbol": "ETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          "relayId": "T3JkZXJWMlR5cGU6NjE1Nzk5NzAzMg=="
+        },
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "6.64" },
+          "perUnitPriceType": { "unit": "6.64" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-24T15:42:23",
+          "closedAt": "2022-08-18T14:14:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAyMjM4OTE1MA=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/9fb622b237e5f80509f4e9ecde6860a9.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/9fb622b237e5f80509f4e9ecde6860a9.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "86989800000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MTg4NTg1NDEwODMwNTQyNjkwMTA0NzM4NDAxMjA2NDUxODcwNjkx"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 213,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "5119",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "5119",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM3MTkx"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE2"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTE1Mjkw",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": {
+          "priceType": {
+            "eth": "91.78",
+            "unit": "91.78",
+            "usd": "127155.68320000000504790"
+          },
+          "id": "T3JkZXJWMlR5cGU6NjE3NDU5MDU1NA==",
+          "orderType": "BASIC",
+          "maker": {
+            "address": "0x5d5335e6bea4b12dcb942cec1da951ae63f2ae64",
+            "id": "QWNjb3VudFR5cGU6MTE1NDMxNDUx"
+          },
+          "perUnitPriceType": { "unit": "91.78" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-07-26T15:34:59",
+          "closedAt": "2022-07-26T22:00:59",
+          "payment": {
+            "symbol": "ETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0x0000000000000000000000000000000000000000",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzMQ=="
+              },
+              "id": "QXNzZXRUeXBlOjEzNjg5MDc3"
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo0Mg=="
+          },
+          "relayId": "T3JkZXJWMlR5cGU6NjE3NDU5MDU1NA=="
+        },
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "160" },
+          "perUnitPriceType": { "unit": "160" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-05-31T18:45:50.619325",
+          "closedAt": "2022-11-27T18:45:00",
+          "payment": {
+            "symbol": "USDC",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/749015f009a66abcb3bbb3502ae2f1ce.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjA2OQ=="
+              },
+              "id": "QXNzZXRUeXBlOjQ0MDM5MDg="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo4MQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6NTY5OTk5OTQ2Ng=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/9248c1689b466ccfa785fa24e8e8275e.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/9248c1689b466ccfa785fa24e8e8275e.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "86750000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MjA3NTMxMzYwMzQyMzEzNDc4MDIwNDI4MTc1NTQzNjYwNzM4MTc0"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 39,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "609",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "609",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTE1Mjkw"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE3"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIzMTM4NDAy",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "6.64" },
+          "perUnitPriceType": { "unit": "6.64" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-24T19:37:15",
+          "closedAt": "2022-08-18T18:08:00",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAyNTc1NTE5MQ=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/e3130f2003cf76b4384ba2012f921fb0.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/e3130f2003cf76b4384ba2012f921fb0.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "100000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MTAyOTc0NjY0MTk1ODE2OTg1Mzg5NTE4OTU2OTA2NTA3NjM2NDE0"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 14,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "5935",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "5935",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIzMTM4NDAy"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE4"
+  },
+  {
+    "node": {
+      "__typename": "AssetType",
+      "relayId": "QXNzZXRUeXBlOjIyODUzMDY4",
+      "__isItemType": "AssetType",
+      "collection": {
+        "isVerified": true,
+        "relayId": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "id": "Q29sbGVjdGlvblR5cGU6NDg4NjIx",
+        "displayData": { "cardDisplayStyle": "CONTAIN" },
+        "slug": "boredapeyachtclub",
+        "name": "Bored Ape Yacht Club",
+        "isCategory": false,
+        "imageUrl": "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s120",
+        "verificationStatus": "VERIFIED"
+      },
+      "orderData": {
+        "bestAskV2": null,
+        "bestBidV2": {
+          "orderType": "BASIC",
+          "priceType": { "unit": "30" },
+          "perUnitPriceType": { "unit": "30" },
+          "dutchAuctionFinalPriceType": null,
+          "openedAt": "2022-02-24T21:01:22",
+          "closedAt": "2023-02-25T03:03:01",
+          "payment": {
+            "symbol": "WETH",
+            "chain": { "identifier": "ETHEREUM" },
+            "asset": {
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "id": "UGF5bWVudEFzc2V0VHlwZTo3OQ=="
+          },
+          "id": "T3JkZXJWMlR5cGU6MzAyNjk3NzM1NA=="
+        }
+      },
+      "name": null,
+      "animationUrl": null,
+      "displayImageUrl": "https://img.seadn.io/files/4f809b585367ec71fa19daba04066cd0.png?fit=max&h=1200&w=1200&auto=format",
+      "imageUrl": "https://img.seadn.io/files/4f809b585367ec71fa19daba04066cd0.png?fit=max&h=1200&w=1200&auto=format",
+      "isDelisted": false,
+      "backgroundColor": null,
+      "decimals": 0,
+      "assetEventData": {
+        "lastSale": {
+          "unitPriceQuantity": {
+            "asset": {
+              "decimals": 18,
+              "imageUrl": "https://openseauserdata.com/files/accae6b6fb3888cbff27a013729c22dc.svg",
+              "symbol": "WETH",
+              "usdSpotPrice": 1385.44,
+              "assetContract": {
+                "blockExplorerLink": "https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "chain": "ETHEREUM",
+                "id": "QXNzZXRDb250cmFjdFR5cGU6MjMzOA=="
+              },
+              "id": "QXNzZXRUeXBlOjQ2NDU2ODE="
+            },
+            "quantity": "94000000000000000000",
+            "id": "QXNzZXRRdWFudGl0eVR5cGU6MzE4Mzc5NzQzMjU4NDc5Njc2ODQzMjk0MTY2MjYxODA0NjQ0MDEw"
+          }
+        }
+      },
+      "chain": { "identifier": "ETHEREUM" },
+      "favoritesCount": 111,
+      "isFrozen": true,
+      "hasUnlockableContent": false,
+      "tokenId": "160",
+      "assetContract": {
+        "address": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+        "chain": "ETHEREUM",
+        "id": "QXNzZXRDb250cmFjdFR5cGU6MjE5NzM2"
+      },
+      "creator": {
+        "address": "0xaba7161a7fb69c88e16ed9f455ce62b791ee4d03",
+        "id": "QWNjb3VudFR5cGU6MzQ1MjI4NzM="
+      },
+      "displayName": "160",
+      "__isNode": "AssetType",
+      "id": "QXNzZXRUeXBlOjIyODUzMDY4"
+    },
+    "cursor": "YXJyYXljb25uZWN0aW9uOjE5"
+  }
+]
