@@ -8,7 +8,7 @@ interface Props {
 }
 
 const NFTCard = ({ nft }: Props) => (
-  <Link to={`/assets/cryptopunks/${nft.id}`} className="nft-card">
+  <Link to={`/assets/cryptopunks/${nft.tokenId}`} className="nft-card">
     <img src={nft.image} className="nft-card__image" alt="" />
     <div className="nft-card__footer">
       <div className="nft-card__id">#{nft.tokenId}</div>
