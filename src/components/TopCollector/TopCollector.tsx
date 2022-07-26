@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 import ETHIcon from '../../icons/ETH'
 import VerifiedIcon from '../../icons/Verified'
 import { Collector } from '../../models'
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const TopCollector = ({ rank, collector }: Props) => (
-  <div className="top-collector">
+  <Link to={`/collections/${collector.slug}`} className="top-collector">
     <div className="top-collector__rank">{rank}</div>
     <div className="top-collector__avatar__container">
       <img className="top-collector__avatar" src={collector.avatar} alt="" />
@@ -43,7 +44,7 @@ const TopCollector = ({ rank, collector }: Props) => (
         <span>{formatToK(collector.volume)}</span>
       </div>
     </div>
-  </div>
+  </Link>
 )
 
 export default TopCollector
