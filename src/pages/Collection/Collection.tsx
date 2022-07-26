@@ -70,8 +70,13 @@ const Collection = () => (
       </div>
 
       <div className="collection__grid">
-        {BORED_APE.map((nft) => (
-          <NFTCard nft={nft} key={nft.id} />
+        {BORED_APE.map(({ id, tokenId, image, lastSale }) => (
+          <NFTCard
+            tokenId={tokenId}
+            image={image}
+            lastSale={lastSale}
+            key={id}
+          />
         ))}
       </div>
     </div>
