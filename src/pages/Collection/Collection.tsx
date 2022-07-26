@@ -1,9 +1,9 @@
-import { TOP_COLLECTORS } from '../../constants'
+import { TOP_COLLECTIONS } from '../../constants'
 import ETHIcon from '../../icons/ETH'
 import VerifiedIcon from '../../icons/Verified'
 import './Collection.sass'
 
-const collection = TOP_COLLECTORS[0]
+const collection = TOP_COLLECTIONS[0]
 
 const Collection = () => (
   <div className="collection">

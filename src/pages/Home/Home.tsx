@@ -1,12 +1,12 @@
 import Categories from '../../components/Categories'
 import Hero from '../../components/Hero'
-import TopCollectors from '../../components/TopCollectors'
+import TopCollections from '../../components/TopCollections'
 import './Home.sass'
 
 const Home = () => (
   <div className="home">
     <Hero />
-    <TopCollectors />
+    <TopCollections />
     <Categories />
   </div>
 )
