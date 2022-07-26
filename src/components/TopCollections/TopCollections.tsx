@@ -1,6 +1,6 @@
 import { TOP_COLLECTIONS } from '../../constants'
 import TopCollection from '../TopCollection/TopCollection'
-import './TopCollectionss.sass'
+import './TopCollections.sass'
 
 const TopCollections = () => (
   <div className="top-collections">
