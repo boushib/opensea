@@ -16,7 +16,7 @@ export interface Category {
   image: string
 }
 
-export interface NFTItem {
+export interface Asset {
   id: string
   image: string
   tokenId: number
