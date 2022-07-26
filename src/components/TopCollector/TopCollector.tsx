@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import ETHIcon from '../../icons/ETH'
+import VerifiedIcon from '../../icons/Verified'
 import { Collector } from '../../models'
 import { formatToK } from '../../utils'
 import './TopCollector.sass'
@@ -12,7 +13,10 @@ interface Props {
 const TopCollector = ({ rank, collector }: Props) => (
   <div className="top-collector">
     <div className="top-collector__rank">{rank}</div>
-    <img className="top-collector__avatar" src={collector.avatar} alt="" />
+    <div className="top-collector__avatar__container">
+      <img className="top-collector__avatar" src={collector.avatar} alt="" />
+      {collector.isVerified && <VerifiedIcon />}
+    </div>
     <div>
       <div className="top-collector__name">Bored Ape Yacht Club</div>
       <div className="top-collector__price">
