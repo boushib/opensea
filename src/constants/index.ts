@@ -1,4 +1,4 @@
-export const TOP_COLLECTORS = [
+export const TOP_COLLECTIONS = [
   {
     id: 'Q29sbGVjdGlvblR5cGU6MjU2Mw==',
     slug: 'cryptopunks',

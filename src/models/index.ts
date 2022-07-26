@@ -1,4 +1,4 @@
-export interface Collector {
+export interface Collection {
   id: string
   slug: string
   name: string
