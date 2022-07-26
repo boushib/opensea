@@ -1,4 +1,5 @@
-import { TOP_COLLECTIONS } from '../../constants'
+import NFTCard from '../../components/NFTCard'
+import { BORED_APE, TOP_COLLECTIONS } from '../../constants'
 import ETHIcon from '../../icons/ETH'
 import VerifiedIcon from '../../icons/Verified'
 import './Collection.sass'
@@ -66,6 +67,12 @@ const Collection = () => (
           </div>
           <div className="collection__stats__item__value">Best offer</div>
         </div>
+      </div>
+
+      <div className="collection__grid">
+        {BORED_APE.map((nft) => (
+          <NFTCard nft={nft} key={nft.id} />
+        ))}
       </div>
     </div>
   </div>
