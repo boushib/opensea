@@ -4,7 +4,7 @@ import ETHIcon from '../../icons/ETH'
 import VerifiedIcon from '../../icons/Verified'
 import { Collection } from '../../models'
 import { formatToK } from '../../utils'
-import './Topcollection.sass'
+import './TopCollection.sass'
 
 interface Props {
   rank: number
