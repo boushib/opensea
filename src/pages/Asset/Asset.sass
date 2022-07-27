@@ -1,0 +1,67 @@
+.asset
+  padding: 60px 0
+
+  h2
+    margin-bottom: 16px
+
+  &__grid
+    display: flex
+    gap: 60px
+
+    &__item
+      &:first-child
+        width: 512px
+      &--expanded
+        flex-grow: 1
+
+  &__image
+    display: block
+    width: 512px
+    height: 512px
+    object-fit: cover
+    margin: 0 auto 20px
+
+  &__meta
+    display: flex
+    align-items: center
+    gap: 20px
+    margin-bottom: 20px
+
+    a
+      color: var(--color-primary)
+
+    svg
+      width: 24px
+      height: 24px
+      color: inherit
+
+    &__item
+      color: var(--color-grey)
+      display: flex
+      align-items: center
+      gap: 4px
+
+  .card
+    margin-bottom: 20px
+
+  &__price
+    display: flex
+    align-items: center
+    gap: 6px
+    font-size: 15px
+    color: var(--color-grey)
+
+    span
+      font-size: 28px
+      font-weight: 600
+      color: #fff
+
+    svg
+      width: 24px
+      height: 24px
+
+  &__properties
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    gap: 10px

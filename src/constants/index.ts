@@ -366,3 +366,74 @@ export const BORED_APE = [
     lastSale: 1385.44,
   },
 ]
+export const LISTINGS = [
+  {
+    id: '2e3c16fb-1dbb-40ad-9aa7-b5f82b455abd',
+    price: 85.986,
+    expiration: '29 days',
+    from: 213721,
+  },
+  {
+    id: '679b70ae-0578-4ffe-ae16-6ffec09b58f6',
+    price: 86.839,
+    expiration: '28 days',
+    from: 213720,
+  },
+  {
+    id: 'cec478f3-a438-4143-852c-55187f911d52',
+    price: 86.7,
+    expiration: '27 days',
+    from: 213719,
+  },
+  {
+    id: '7e7a9cbb-3793-4884-afd1-615a8ce4059e',
+    price: 86.85,
+    expiration: '26 days',
+    from: 213718,
+  },
+  {
+    id: '65f357ee-f2ee-4eed-aa09-da73d2a31fdb',
+    price: 86.2,
+    expiration: '25 days',
+    from: 213717,
+  },
+]
+
+export const PROPERTIES = [
+  {
+    id: 'a4bb1345-9942-4fc3-9563-64e29f70e4c6',
+    type: 'Background',
+    value: 'Grey',
+    description: '12% have this trait',
+  },
+  {
+    id: '76edf062-3b43-40c4-abf8-99e1d559e750',
+    type: 'Clothes',
+    value: 'Sailor Shirt',
+    description: '3% have this trait',
+  },
+  {
+    id: '6d6ab6f0-5b9d-404a-9e0a-bc81a34a36f4',
+    type: 'Eyes',
+    value: 'Coins',
+    description: '5% have this trait',
+  },
+  {
+    id: '519de1a4-9e9b-4519-9119-fb920da8a631',
+    type: 'FUR',
+    value: 'Black',
+    description: '12% have this trait',
+  },
+  {
+    id: '3d80963a-4661-4778-b02e-64ac575368e9',
+    type: 'Hat',
+    value: 'Beanie',
+    description: '6% have this trait',
+  },
+  {
+    id: 'f896f68e-1a10-4a52-a52e-1d79425a676f',
+    type: 'Mouth',
+    value: 'Dumbfounded',
+    description: '5% have this trait',
+  },
+]

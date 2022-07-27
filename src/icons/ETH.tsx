@@ -5,6 +5,7 @@ const ETHIcon = () => (
     viewBox="0 0 33 53"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{ filter: 'brightness(1.6)' }}
   >
     <path
       d="M16.3576 0.666687L16.0095 1.85009V36.1896L16.3576 36.5371L32.2976 27.115L16.3576 0.666687Z"
