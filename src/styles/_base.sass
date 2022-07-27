@@ -9,3 +9,57 @@ hr
   border: none
   border-bottom: 1px solid rgba(#fff, .1)
   margin: 32px 0
+
+.label
+  font-size: 15px
+  color: var(--color-grey)
+  margin-bottom: 6px
+
+.card
+  border-radius: 10px
+  background-color: #262b2f
+  width: 100%
+
+  &__header,
+  &__body
+    padding: 20px
+
+  &__header
+    display: flex
+    align-items: center
+    gap: 10px
+    border-bottom: 1px solid rgba(#fff, .1)
+    font-size: 17px
+    font-weight: 500
+
+    svg
+      height: 24px
+      width: 24px
+      color: var(--color-grey)
+
+  &__body
+    display: flex
+    flex-direction: column
+    gap: 24px
+
+.table
+  border-collapse: collapse
+
+  th, td
+    text-align: left
+    padding: 12px
+
+  th
+    font-weight: 600
+
+  thead tr
+    border-bottom: 1px solid rgba(#fff, .1)
+
+  .price
+    display: flex
+    gap: 6px
+    align-items: center
+
+    svg
+      width: 16px
+      height: 16px
