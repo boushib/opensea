@@ -2,15 +2,21 @@ import { Link } from 'react-router-dom'
 import Logo from '../../assets/img/logo.svg'
 import ProfileIcon from '../../icons/Profile'
 import WalletIcon from '../../icons/Wallet'
+import Button from '../Button'
 import SearchBox from '../SearchBox'
 import './Navbar.sass'
 
-const Navbar = () => (
+interface Props {
+  address?: string
+  onConnectWallet: () => void
+}
+
+const Navbar = ({ address, onConnectWallet }: Props) => (
   <nav className="nav">
     <NavLogo />
     <SearchBox />
     <NavMenu />
-    <NavTail />
+    <NavTail address={address} onConnectWallet={onConnectWallet} />
   </nav>
 )
 
@@ -37,10 +43,19 @@ const NavMenu = () => (
   </div>
 )
 
-const NavTail = () => (
+const NavTail = ({ address, onConnectWallet }: Props) => (
   <div className="nav__tail">
-    <ProfileIcon />
-    <WalletIcon />
+    {address && (
+      <>
+        <ProfileIcon />
+        <WalletIcon />
+      </>
+    )}
+    {!address && (
+      <Button isPrimary isSmall onClick={onConnectWallet}>
+        Connect wallet
+      </Button>
+    )}
   </div>
 )
 
