@@ -1,5 +1,6 @@
 import { useWeb3 } from '@3rdweb/hooks'
 import { useEffect } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 import { Route, Routes } from 'react-router-dom'
 import api from './api'
 import Footer from './components/Footer'
@@ -14,12 +15,21 @@ const App = () => {
   useEffect(() => {
     if (address) {
       const createUserDoc = async () => {
-        await api.createIfNotExists({
+        const { username } = await api.createIfNotExists({
           _type: 'user',
           _id: address,
           username: 'unnamed',
           address,
         })
+        toast.success(
+          `Welcome back ${username !== 'unnamed' ? username : ''}!`,
+          {
+            style: {
+              backgroundColor: '#202225',
+              color: '#fff',
+            },
+          }
+        )
       }
       createUserDoc()
     }
@@ -37,6 +47,7 @@ const App = () => {
         <Route path="/assets/:collectionId/:assetId" element={<Asset />} />
       </Routes>
       <Footer />
+      <Toaster position="top-center" />
     </div>
   )
 }
