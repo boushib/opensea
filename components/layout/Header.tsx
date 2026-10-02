@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
+import WalletButton from '@/components/wallet/WalletButton'
 import styles from './Header.module.sass'
 
 const LINKS = [
@@ -36,6 +37,7 @@ const Header = () => {
         </nav>
         <div className={styles.actions}>
           <ThemeToggle />
+          <WalletButton />
           <button type="button" className={`${styles.iconButton} ${styles.menuButton}`} onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>

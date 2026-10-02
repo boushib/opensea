@@ -1,0 +1,226 @@
+.connect
+  height: 42px
+  padding: 0 18px
+  border: 0
+  border-radius: 12px
+  color: var(--on-accent)
+  font-weight: 600
+  white-space: nowrap
+  background-color: var(--accent)
+  transition: background-color .15s
+
+  &:hover:not(:disabled)
+    background-color: var(--accent-hover)
+
+  &:disabled
+    opacity: .7
+
+.account
+  position: relative
+
+.accountButton
+  display: flex
+  align-items: center
+  gap: 8px
+  height: 42px
+  padding: 0 12px 0 6px
+  border: 1px solid var(--line)
+  border-radius: 12px
+  font-weight: 600
+  background-color: var(--surface)
+
+  &:hover
+    background-color: var(--surface-hover)
+
+  img
+    width: 30px
+    height: 30px
+    border-radius: 8px
+
+.warn
+  color: var(--down)
+
+.menu
+  position: absolute
+  top: calc(100% + 8px)
+  right: 0
+  z-index: 70
+  display: flex
+  flex-direction: column
+  width: 280px
+  padding: 8px
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+  box-shadow: var(--shadow)
+
+  > a, > button
+    display: flex
+    align-items: center
+    gap: 12px
+    padding: 10px 12px
+    border: 0
+    border-radius: 10px
+    font-weight: 500
+    text-align: left
+    background: none
+
+    &:hover
+      background-color: var(--surface-hover)
+
+.menuHead
+  display: flex
+  align-items: center
+  gap: 12px
+  padding: 8px 8px 12px
+
+  img
+    width: 44px
+    height: 44px
+    border-radius: 12px
+
+  div
+    display: flex
+    flex-direction: column
+
+.copy
+  display: inline-flex
+  align-items: center
+  gap: 6px
+  padding: 0
+  border: 0
+  font-weight: 700
+  background: none
+
+.network
+  color: var(--text-3)
+  font-size: 13px
+
+.balance
+  display: flex
+  justify-content: space-between
+  margin: 0 4px 8px
+  padding: 12px
+  border-radius: 12px
+  background-color: var(--bg-soft)
+
+  span
+    color: var(--text-2)
+    font-size: 14px
+
+.switch
+  margin-bottom: 4px
+  color: var(--down) !important
+  font-weight: 600 !important
+
+// Connect dialog
+.overlay
+  position: fixed
+  inset: 0
+  z-index: 100
+  display: grid
+  place-items: center
+  padding: 16px
+  background-color: rgba(0, 0, 0, .5)
+
+.modal
+  width: 100%
+  max-width: 440px
+  padding: 24px
+  border-radius: 20px
+  background-color: var(--surface)
+  box-shadow: var(--shadow)
+
+.modalHead
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 18px
+
+  h2
+    font-size: 22px
+
+.close
+  display: grid
+  place-items: center
+  width: 38px
+  height: 38px
+  border: 0
+  border-radius: 10px
+  color: var(--text-2)
+  background: none
+
+  &:hover
+    background-color: var(--surface-hover)
+
+.option
+  display: flex
+  align-items: center
+  gap: 14px
+  width: 100%
+  margin-bottom: 10px
+  padding: 14px
+  border: 1px solid var(--line)
+  border-radius: 14px
+  text-align: left
+  background-color: var(--surface)
+  transition: border-color .15s, background-color .15s
+
+  &:hover:not(:disabled)
+    border-color: var(--accent)
+    background-color: var(--surface-hover)
+
+  &:disabled
+    opacity: .55
+    cursor: default
+
+.optionIcon
+  display: grid
+  flex-shrink: 0
+  place-items: center
+  width: 46px
+  height: 46px
+  border-radius: 12px
+  color: var(--accent)
+  background-color: var(--accent-soft)
+
+.optionDemo
+  color: #8e44ec
+  background-color: rgba(142, 68, 236, .12)
+
+.optionText
+  display: flex
+  flex-direction: column
+
+  strong
+    font-weight: 700
+
+  span
+    color: var(--text-2)
+    font-size: 13px
+
+.hint
+  margin: -2px 0 12px
+  color: var(--text-2)
+  font-size: 13px
+
+  a
+    color: var(--accent)
+    font-weight: 600
+
+.error
+  margin-top: 4px
+  padding: 10px 12px
+  border-radius: 10px
+  color: var(--down)
+  font-size: 14px
+  background-color: rgba(229, 72, 77, .1)
+
+.note
+  margin-top: 14px
+  color: var(--text-3)
+  font-size: 13px
+
+@media (max-width: 560px)
+  .accountButton span
+    display: none

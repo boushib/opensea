@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { Providers } from '@/components/wallet/WalletProvider'
 import './globals.scss'
 
 const sans = Geist({ subsets: ['latin'], variable: '--font-sans' })
@@ -22,9 +23,11 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
