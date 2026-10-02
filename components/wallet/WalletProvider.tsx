@@ -1,11 +1,12 @@
 'use client'
 
-import { createContext, useContext, useState, useSyncExternalStore, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, useSyncExternalStore, type ReactNode } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { formatEther } from 'viem'
 import { useBalance, useConnect, useConnection, useConnectors, useDisconnect, useSignMessage, useSwitchChain, WagmiProvider } from 'wagmi'
 import { sepolia } from 'wagmi/chains'
 import { useMarket } from '@/lib/market'
+import { simulate } from '@/lib/simulator'
 import { loadDemoAccount } from '@/lib/wallet/demo'
 import { wagmiConfig } from '@/lib/wallet/config'
 import ConnectModal from './ConnectModal'
@@ -77,7 +78,16 @@ const WalletState = ({ children }: { children: ReactNode }) => {
   const address = browserAddress ?? demo?.address ?? null
   const balance = useBalance({ address: browserAddress ?? undefined, chainId: sepolia.id, query: { enabled: !!browserAddress } })
   const market = useMarket(demo?.address ?? null)
-  const demoSpent = market.purchases.reduce((s, p) => s + p.price, 0)
+  // Demo ETH: spent on purchases and mints, earned from sales
+  const demoSpent = market.purchases.reduce((s, p) => s + p.price, 0) - market.sales.reduce((s, x) => s + x.price, 0)
+
+  // The rest of the market reacts to your listings and offers while you browse
+  useEffect(() => {
+    if (!address) return
+    simulate(address)
+    const timer = setInterval(() => simulate(address), 5000)
+    return () => clearInterval(timer)
+  }, [address])
 
   const wallet: Wallet = {
     status: address ? 'connected' : connection.status === 'connecting' || connection.status === 'reconnecting' ? 'connecting' : 'disconnected',

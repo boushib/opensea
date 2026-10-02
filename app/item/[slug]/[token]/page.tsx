@@ -108,6 +108,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
             listingDays={item.listingDays}
             bestOffer={item.bestOffer}
             floor={c.stats.floor}
+            fair={item.price ?? item.lastSale?.price ?? c.stats.floor}
           />
           <div className={styles.chips}>
             <span>

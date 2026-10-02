@@ -275,7 +275,7 @@ section.panel
   flex-wrap: wrap
   align-items: center
   gap: 8px
-  padding: 20px
+  margin-bottom: 16px
   font-weight: 600
 
   svg
@@ -577,3 +577,53 @@ section.panel
 
   .rail
     grid-auto-columns: 46%
+
+// Offers others made on your item
+.incoming
+  padding: 16px 20px
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+
+  h3
+    margin-bottom: 10px
+    font-size: 15px
+    font-weight: 700
+    letter-spacing: 0
+
+  ul
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+  li
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 12px
+    padding: 10px 12px
+    border-radius: 12px
+    background-color: var(--bg-soft)
+    font-size: 14px
+
+    a
+      color: var(--accent)
+      font-weight: 600
+
+  button
+    padding: 8px 14px
+    border: 0
+    border-radius: 10px
+    color: var(--on-accent)
+    font-weight: 700
+    background-color: var(--accent)
+
+    &:hover
+      background-color: var(--accent-hover)
+
+.muted
+  color: var(--text-3)
+  font-size: 14px
+
+.errorText
+  color: var(--down) !important

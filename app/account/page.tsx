@@ -4,7 +4,7 @@ import { getCollections } from '@/lib/catalog'
 
 export const metadata: Metadata = { title: 'Your profile' }
 
-const TABS: Tab[] = ['collected', 'favorites', 'offers', 'activity']
+const TABS: Tab[] = ['collected', 'listings', 'offers', 'received', 'favorites', 'activity']
 
 export default async function Account({ searchParams }: PageProps<'/account'>) {
   const { tab } = await searchParams

@@ -2,21 +2,23 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Check, Copy, HandCoins, ShoppingCart, Wallet as WalletIcon } from 'lucide-react'
+import { ArrowRightLeft, Check, Copy, HandCoins, ShoppingCart, Tag, Wallet as WalletIcon } from 'lucide-react'
 import ItemCard from '@/components/ui/ItemCard'
 import { useWallet } from '@/components/wallet/WalletProvider'
 import { eth } from '@/lib/format'
 import { identicon } from '@/lib/identicon'
-import { useMarket } from '@/lib/market'
+import { incomingOffers, useMarket } from '@/lib/market'
+import { PEOPLE } from '@/lib/simulator'
+import { useNow } from '@/lib/useNow'
 import { hash } from '@/lib/rng'
-import { artUrl, itemUrl } from '@/lib/urls'
+import { artUrl, itemUrl, userUrl } from '@/lib/urls'
 import { shortAddress } from '@/lib/users'
 import styles from './Account.module.sass'
 
-export type Tab = 'collected' | 'favorites' | 'offers' | 'activity'
+export type Tab = 'collected' | 'listings' | 'offers' | 'received' | 'favorites' | 'activity'
 export type CollectionMeta = { name: string; floor: number; verified: boolean }
 
-const LABELS: Record<Tab, string> = { collected: 'Collected', favorites: 'Favorites', offers: 'Offers made', activity: 'Activity' }
+const LABELS: Record<Tab, string> = { collected: 'Collected', listings: 'Listings', offers: 'Offers made', received: 'Offers received', favorites: 'Favorites', activity: 'Activity' }
 
 const when = (iso: string) => new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
@@ -25,6 +27,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const [copied, setCopied] = useState(false)
+  const now = useNow()
 
   if (!wallet.address)
     return (
@@ -41,16 +44,27 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
     )
 
   const name = (slug: string, tokenId: number) => `${collections[slug]?.name ?? slug} #${tokenId}`
-  const value = market.purchases.reduce((s, p) => s + (collections[p.slug]?.floor ?? 0), 0)
+  const value = market.held.reduce((s, p) => s + (collections[p.slug]?.floor ?? 0), 0)
+  const received = now ? market.held.flatMap((p) => incomingOffers(p, PEOPLE, now).map((o) => ({ ...o, name: p.name }))).sort((a, b) => b.at - a.at) : []
   const favorites = market.favorites.map((k) => {
     const [slug, id] = k.split('/')
     return { slug, tokenId: Number(id) }
   })
   const activity = [
-    ...market.purchases.map((p) => ({ kind: 'Purchase' as const, slug: p.slug, tokenId: p.tokenId, price: p.price, at: p.at, signature: p.signature })),
-    ...market.offers.map((o) => ({ kind: 'Offer' as const, slug: o.slug, tokenId: o.tokenId, price: o.amount, at: o.at, signature: o.signature })),
+    ...market.purchases.map((p) => ({ kind: (p.via === 'offer' ? 'Offer accepted' : p.via === 'auction' ? 'Auction won' : p.via === 'mint' ? 'Minted' : 'Purchase') as string, slug: p.slug, tokenId: p.tokenId, price: p.price as number | null, at: p.at, signature: p.signature as string | null })),
+    ...market.offers.map((o) => ({ kind: 'Offer', slug: o.slug, tokenId: o.tokenId, price: o.amount as number | null, at: o.at, signature: o.signature as string | null })),
+    ...market.listings.map((l) => ({ kind: 'Listing', slug: l.slug, tokenId: l.tokenId, price: l.price as number | null, at: l.at, signature: l.signature as string | null })),
+    ...market.sales.map((s) => ({ kind: 'Sale', slug: s.slug, tokenId: s.tokenId, price: s.price as number | null, at: s.at, signature: null })),
+    ...market.transfers.map((t) => ({ kind: 'Transfer', slug: t.slug, tokenId: t.tokenId, price: null, at: t.at, signature: t.signature as string | null })),
   ].sort((a, b) => b.at.localeCompare(a.at))
-  const counts: Record<Tab, number> = { collected: market.purchases.length, favorites: favorites.length, offers: market.offers.length, activity: activity.length }
+  const counts: Record<Tab, number> = {
+    collected: market.held.length,
+    listings: market.listings.length,
+    offers: market.offers.length,
+    received: received.length,
+    favorites: favorites.length,
+    activity: activity.length,
+  }
 
   const copy = async () => {
     try {
@@ -74,7 +88,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
         </div>
         <dl className={styles.stats}>
           <div>
-            <dd className="mono">{market.purchases.length}</dd>
+            <dd className="mono">{market.held.length}</dd>
             <dt>Items</dt>
           </div>
           <div>
@@ -100,13 +114,93 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
         </nav>
 
         {tab === 'collected' &&
-          (market.purchases.length === 0 ? (
-            <Empty text="You haven’t bought anything yet." />
+          (market.held.length === 0 ? (
+            <Empty text="You don’t own anything yet." />
           ) : (
             <div className={styles.grid}>
-              {market.purchases.map((p) => (
+              {market.held.map((p) => (
                 <ItemCard key={`${p.slug}/${p.tokenId}`} slug={p.slug} tokenId={p.tokenId} name={name(p.slug, p.tokenId)} price={null} note={`Bought for ${eth(p.price)} ETH`} />
               ))}
+            </div>
+          ))}
+
+        {tab === 'listings' &&
+          (market.listings.length === 0 ? (
+            <Empty text="Items you list for sale show up here." />
+          ) : (
+            <div className={styles.tableWrap}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+                    <th>Listed</th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  {market.listings.map((l) => (
+                    <tr key={`${l.slug}/${l.tokenId}`}>
+                      <td>
+                        <Link href={itemUrl(l.slug, l.tokenId)} className={styles.item}>
+                          <img src={artUrl(l.slug, l.tokenId)} alt="" />
+                          {l.name}
+                        </Link>
+                      </td>
+                      <td className="mono">{eth(l.price)} ETH</td>
+                      <td>{l.days} days</td>
+                      <td className={styles.muted}>{when(l.at)}</td>
+                      <td>
+                        <button type="button" className={styles.cancel} onClick={() => market.cancelListing(l.slug, l.tokenId)}>
+                          Cancel
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+
+        {tab === 'received' &&
+          (received.length === 0 ? (
+            <Empty text="Offers collectors make on your items show up here." />
+          ) : (
+            <div className={styles.tableWrap}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Offer</th>
+                    <th>From</th>
+                    <th />
+                  </tr>
+                </thead>
+                <tbody>
+                  {received.map((o) => (
+                    <tr key={o.id}>
+                      <td>
+                        <Link href={itemUrl(o.slug, o.tokenId)} className={styles.item}>
+                          <img src={artUrl(o.slug, o.tokenId)} alt="" />
+                          {o.name}
+                        </Link>
+                      </td>
+                      <td className="mono">{eth(o.amount)} ETH</td>
+                      <td>
+                        <Link href={userUrl(o.from.address)} className={styles.link}>
+                          {o.from.name}
+                        </Link>
+                      </td>
+                      <td>
+                        <Link href={itemUrl(o.slug, o.tokenId)} className={styles.review}>
+                          Review
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ))}
 
@@ -162,7 +256,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
 
         {tab === 'activity' &&
           (activity.length === 0 ? (
-            <Empty text="Purchases and offers you sign show up here." />
+            <Empty text="Purchases, sales, listings, offers and transfers show up here." />
           ) : (
             <div className={styles.tableWrap}>
               <table className={styles.table}>
@@ -180,7 +274,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
                     <tr key={`${a.kind}-${a.slug}-${a.tokenId}-${a.at}`}>
                       <td>
                         <span className={styles.event}>
-                          {a.kind === 'Purchase' ? <ShoppingCart size={16} /> : <HandCoins size={16} />} {a.kind}
+                          {a.kind === 'Offer' ? <HandCoins size={16} /> : a.kind === 'Listing' || a.kind === 'Sale' ? <Tag size={16} /> : a.kind === 'Transfer' ? <ArrowRightLeft size={16} /> : <ShoppingCart size={16} />} {a.kind}
                         </span>
                       </td>
                       <td>
@@ -189,9 +283,9 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
                           {name(a.slug, a.tokenId)}
                         </Link>
                       </td>
-                      <td className="mono">{eth(a.price)} ETH</td>
-                      <td className={`mono ${styles.muted}`} title={a.signature}>
-                        {a.signature.slice(0, 10)}…{a.signature.slice(-6)}
+                      <td className="mono">{a.price === null ? '—' : `${eth(a.price)} ETH`}</td>
+                      <td className={`mono ${styles.muted}`} title={a.signature ?? undefined}>
+                        {a.signature ? `${a.signature.slice(0, 10)}…${a.signature.slice(-6)}` : 'Simulated'}
                       </td>
                       <td className={styles.muted}>{when(a.at)}</td>
                     </tr>
