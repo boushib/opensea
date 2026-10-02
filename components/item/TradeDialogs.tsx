@@ -23,7 +23,7 @@ const Durations = ({ value, onChange }: { value: number; onChange: (d: number) =
   </div>
 )
 
-const AmountField = ({ label, value, onChange, hint }: { label: string; value: string; onChange: (v: string) => void; hint: string }) => (
+export const AmountField = ({ label, value, onChange, hint }: { label: string; value: string; onChange: (v: string) => void; hint: string }) => (
   <label className={styles.field}>
     <span>{label}</span>
     <div className={styles.amount}>
@@ -35,7 +35,7 @@ const AmountField = ({ label, value, onChange, hint }: { label: string; value: s
 )
 
 /** Shared flow: sign, record, show success */
-const useSigned = () => {
+export const useSigned = () => {
   const wallet = useWallet()
   const [state, setState] = useState<'edit' | 'signing' | 'done'>('edit')
   const [error, setError] = useState('')

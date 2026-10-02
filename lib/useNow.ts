@@ -2,28 +2,44 @@
 
 import { useSyncExternalStore } from 'react'
 
-// One shared clock that ticks every few seconds, so time-based UI stays pure during render
-let now = 0
-const listeners = new Set<() => void>()
-let timer: ReturnType<typeof setInterval> | null = null
+// Shared clocks (one per interval), so time-based UI stays pure during render
+type Clock = { now: number; listeners: Set<() => void>; timer: ReturnType<typeof setInterval> | null; subscribe: (l: () => void) => () => void; read: () => number }
+const clocks = new Map<number, Clock>()
 
-const subscribe = (l: () => void) => {
-  listeners.add(l)
-  if (!timer) {
-    now = Date.now()
-    timer = setInterval(() => {
-      now = Date.now()
-      listeners.forEach((fn) => fn())
-    }, 5000)
+const clock = (every: number) => {
+  const existing = clocks.get(every)
+  if (existing) return existing
+  const c: Clock = {
+    now: 0,
+    listeners: new Set(),
+    timer: null,
+    read: () => c.now || (c.now = Date.now()),
+    subscribe: (l) => {
+      c.listeners.add(l)
+      if (!c.timer) {
+        c.now = Date.now()
+        c.timer = setInterval(() => {
+          c.now = Date.now()
+          c.listeners.forEach((fn) => fn())
+        }, every)
+      }
+      return () => {
+        c.listeners.delete(l)
+        if (c.listeners.size === 0 && c.timer) {
+          clearInterval(c.timer)
+          c.timer = null
+        }
+      }
+    },
   }
-  return () => {
-    listeners.delete(l)
-    if (listeners.size === 0 && timer) {
-      clearInterval(timer)
-      timer = null
-    }
-  }
+  clocks.set(every, c)
+  return c
 }
 
-/** The current time in ms, updated every 5 seconds (0 during server rendering) */
-export const useNow = () => useSyncExternalStore(subscribe, () => now || (now = Date.now()), () => 0)
+const serverNow = () => 0
+
+/** The current time in ms, updated every `every` ms (5 seconds by default; 0 during server rendering) */
+export const useNow = (every = 5000) => {
+  const c = clock(every)
+  return useSyncExternalStore(c.subscribe, c.read, serverNow)
+}

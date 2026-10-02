@@ -50,7 +50,10 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
     const [slug, id] = k.split('/')
     return { slug, tokenId: Number(id) }
   })
+  // Your latest bid on each auction still running
+  const bids = market.bids.filter((b, i) => market.bids.findIndex((x) => x.id === b.id) === i)
   const activity = [
+    ...market.bids.map((b) => ({ kind: 'Bid', slug: b.slug, tokenId: b.tokenId, price: b.amount as number | null, at: b.at, signature: b.signature as string | null })),
     ...market.purchases.map((p) => ({ kind: (p.via === 'offer' ? 'Offer accepted' : p.via === 'auction' ? 'Auction won' : p.via === 'mint' ? 'Minted' : 'Purchase') as string, slug: p.slug, tokenId: p.tokenId, price: p.price as number | null, at: p.at, signature: p.signature as string | null })),
     ...market.offers.map((o) => ({ kind: 'Offer', slug: o.slug, tokenId: o.tokenId, price: o.amount as number | null, at: o.at, signature: o.signature as string | null })),
     ...market.listings.map((l) => ({ kind: 'Listing', slug: l.slug, tokenId: l.tokenId, price: l.price as number | null, at: l.at, signature: l.signature as string | null })),
@@ -60,7 +63,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
   const counts: Record<Tab, number> = {
     collected: market.held.length,
     listings: market.listings.length,
-    offers: market.offers.length + market.collectionOffers.length,
+    offers: market.offers.length + market.collectionOffers.length + bids.length,
     received: received.length,
     favorites: favorites.length,
     activity: activity.length,
@@ -216,7 +219,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
           ))}
 
         {tab === 'offers' &&
-          (market.offers.length + market.collectionOffers.length === 0 ? (
+          (counts.offers === 0 ? (
             <Empty text="Offers you make on items show up here." />
           ) : (
             <div className={styles.tableWrap}>
@@ -231,6 +234,23 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
                   </tr>
                 </thead>
                 <tbody>
+                  {bids.map((b) => (
+                    <tr key={`bid/${b.id}`}>
+                      <td>
+                        <Link href={itemUrl(b.slug, b.tokenId)} className={styles.item}>
+                          <img src={artUrl(b.slug, b.tokenId)} alt="" />
+                          <span>
+                            {b.name}
+                            <small className={styles.muted}> · Auction bid</small>
+                          </span>
+                        </Link>
+                      </td>
+                      <td className="mono">{eth(b.amount)} ETH</td>
+                      <td>{now ? (now < b.endsAt ? `Ends in ${Math.ceil((b.endsAt - now) / 60_000)} min` : 'Settling') : '—'}</td>
+                      <td className={styles.muted}>{when(b.at)}</td>
+                      <td />
+                    </tr>
+                  ))}
                   {market.collectionOffers.map((o) => (
                     <tr key={`collection/${o.slug}`}>
                       <td>
@@ -297,7 +317,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
                     <tr key={`${a.kind}-${a.slug}-${a.tokenId}-${a.at}`}>
                       <td>
                         <span className={styles.event}>
-                          {a.kind === 'Offer' ? <HandCoins size={16} /> : a.kind === 'Listing' || a.kind === 'Sale' ? <Tag size={16} /> : a.kind === 'Transfer' ? <ArrowRightLeft size={16} /> : <ShoppingCart size={16} />} {a.kind}
+                          {a.kind === 'Offer' || a.kind === 'Bid' ? <HandCoins size={16} /> : a.kind === 'Listing' || a.kind === 'Sale' ? <Tag size={16} /> : a.kind === 'Transfer' ? <ArrowRightLeft size={16} /> : <ShoppingCart size={16} />} {a.kind}
                         </span>
                       </td>
                       <td>

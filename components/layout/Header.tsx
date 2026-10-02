@@ -16,6 +16,7 @@ import styles from './Header.module.sass'
 const LINKS = [
   { href: '/explore', label: 'Explore' },
   { href: '/rankings', label: 'Rankings' },
+  { href: '/auctions', label: 'Auctions' },
 ]
 
 const Header = ({ collections }: { collections: SearchCollection[] }) => {

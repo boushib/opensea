@@ -1,6 +1,7 @@
 'use client'
 
 import { useSyncExternalStore } from 'react'
+import type { Bid } from './auctions'
 import { itemName } from './names'
 import { hash } from './rng'
 
@@ -25,6 +26,8 @@ export type MarketState = {
   listings: Listing[]
   offers: Offer[]
   collectionOffers: CollectionOffer[]
+  /** Your bids on live auctions, until each auction is settled */
+  bids: Bid[]
   sales: Sale[]
   transfers: Transfer[]
   favorites: string[]
@@ -33,7 +36,7 @@ export type MarketState = {
   seen: string[]
 }
 
-const EMPTY: MarketState = { purchases: [], listings: [], offers: [], collectionOffers: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
+const EMPTY: MarketState = { purchases: [], listings: [], offers: [], collectionOffers: [], bids: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
 const storageKey = (address: string) => `market:${address.toLowerCase()}`
 const listeners = new Set<() => void>()
 const cache = new Map<string, MarketState>()
@@ -159,6 +162,8 @@ export const useMarket = (address: string | null) => {
     cancelOffer: (slug: string, tokenId: number) => update((s) => ({ ...s, offers: s.offers.filter(not(same(slug, tokenId))) })),
     collectionOfferOn: (slug: string) => state.collectionOffers.find((o) => o.slug === slug) ?? null,
     makeCollectionOffer: (o: CollectionOffer) => update((s) => ({ ...s, collectionOffers: [o, ...s.collectionOffers.filter((x) => x.slug !== o.slug)] })),
+    bidsOn: (auctionId: string) => state.bids.filter((b) => b.id === auctionId),
+    placeBid: (b: Bid) => update((s) => ({ ...s, bids: [b, ...s.bids] })),
     cancelCollectionOffer: (slug: string) => update((s) => ({ ...s, collectionOffers: s.collectionOffers.filter((x) => x.slug !== slug) })),
     list: (l: Listing) => update((s) => ({ ...s, listings: [l, ...s.listings.filter(not(same(l.slug, l.tokenId)))] })),
     cancelListing: (slug: string, tokenId: number) => update((s) => ({ ...s, listings: s.listings.filter(not(same(slug, tokenId))) })),

@@ -1,6 +1,7 @@
 'use client'
 
 import { holdings, incomingOffers, readMarket, writeMarket, type MarketState, type Note, type Party } from './market'
+import { auctionState, isYou } from './auctions'
 import { hash } from './rng'
 import { USERS } from './users'
 import { itemUrl } from './urls'
@@ -107,6 +108,32 @@ export const simulate = (address: string, now = Date.now()) => {
       if (seen.has(o.id)) continue
       seen.add(o.id)
       notes.push(note({ kind: 'offer-received', title: `New offer on ${p.name}`, body: `${o.from.name} offered ${o.amount} ETH.`, href: itemUrl(p.slug, p.tokenId), at: at(o.at) }))
+    }
+  }
+  // Auctions you bid on: tell you when you're outbid, then settle when they end
+  for (const id of new Set(next.bids.map((b) => b.id))) {
+    const mine = next.bids.filter((b) => b.id === id)
+    const a = mine[0]
+    const result = auctionState(a, mine, now)
+    const href = itemUrl(a.slug, a.tokenId)
+    if (result.ended) {
+      const won = isYou(result.leader)
+      next = {
+        ...next,
+        bids: next.bids.filter((b) => b.id !== id),
+        purchases: won ? [{ slug: a.slug, tokenId: a.tokenId, name: a.name, price: result.high!, at: at(a.endsAt), signature: mine[0].signature, via: 'auction' }, ...next.purchases] : next.purchases,
+      }
+      notes.push(
+        won
+          ? note({ kind: 'auction-won', title: `You won ${a.name}`, body: `Your bid of ${result.high} ETH took it.`, href, at: at(a.endsAt) })
+          : note({ kind: 'auction-lost', title: `Auction ended: ${a.name}`, body: result.leader && !isYou(result.leader) ? `It went to ${result.leader.name} for ${result.high} ETH.` : 'It ended without a winner.', href, at: at(a.endsAt) })
+      )
+    } else if (!isYou(result.leader) && result.leader && result.high !== null) {
+      const key = `outbid:${id}:${result.high}`
+      if (!seen.has(key)) {
+        seen.add(key)
+        notes.push(note({ kind: 'outbid', title: `Outbid on ${a.name}`, body: `${result.leader.name} bid ${result.high} ETH.`, href, at: at(result.history[0].at) }))
+      }
     }
   }
   if (seen.size !== next.seen.length) next = { ...next, seen: [...seen] }

@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRightLeft, CheckCircle2, Clock, HandCoins, ShoppingCart, Tag } from 'lucide-react'
+import AuctionPanel from '@/components/auction/AuctionPanel'
 import CartButton from '@/components/cart/CartButton'
 import { useWallet } from '@/components/wallet/WalletProvider'
+import type { AuctionLot } from '@/lib/auctions'
 import { eth, usd } from '@/lib/format'
 import { incomingOffers, useMarket, type IncomingOffer } from '@/lib/market'
 import { PEOPLE } from '@/lib/simulator'
@@ -26,6 +28,8 @@ type Props = {
   floor: number
   /** What the item is worth: its price, last sale or the floor */
   fair: number
+  /** Set when the item is up for auction */
+  auction?: AuctionLot | null
 }
 
 type Dialog = { kind: 'buy' | 'offer' | 'list' | 'transfer' } | { kind: 'accept'; offer: IncomingOffer } | null
@@ -33,7 +37,7 @@ type Dialog = { kind: 'buy' | 'offer' | 'list' | 'transfer' } | { kind: 'accept'
 const daysLeft = (at: string, days: number, now: number) => Math.max(1, Math.ceil((new Date(at).getTime() + days * 864e5 - now) / 864e5))
 
 /** Owner, price and every trade: buy, offer, list, transfer and accepting offers */
-const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listingDays, bestOffer, floor, fair }: Props) => {
+const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listingDays, bestOffer, floor, fair, auction }: Props) => {
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const now = useNow()
@@ -70,6 +74,9 @@ const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listin
         )}
       </p>
 
+      {!owned && !newOwner && auction ? (
+        <AuctionPanel lot={auction} />
+      ) : (
       <div className={styles.priceCard}>
         {owned ? (
           <div className={styles.priceBody}>
@@ -141,6 +148,7 @@ const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listin
           </>
         )}
       </div>
+      )}
 
       {owned && (
         <div className={styles.incoming}>

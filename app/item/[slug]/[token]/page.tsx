@@ -7,6 +7,7 @@ import ItemActions from '@/components/item/ItemActions'
 import PriceChart from '@/components/item/PriceChart'
 import ItemCard from '@/components/ui/ItemCard'
 import Verified from '@/components/ui/Verified'
+import { getAuctionLot } from '@/lib/auctionLots'
 import { getItem, getUser } from '@/lib/catalog'
 import { ago, count, eth } from '@/lib/format'
 import { itemDetails } from '@/lib/itemDetails'
@@ -109,6 +110,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
             bestOffer={item.bestOffer}
             floor={c.stats.floor}
             fair={item.price ?? item.lastSale?.price ?? c.stats.floor}
+            auction={getAuctionLot(slug, item.tokenId)}
           />
           <div className={styles.chips}>
             <span>

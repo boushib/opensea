@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import LiveAuctions from '@/components/auction/LiveAuctions'
 import Featured, { type Slide } from '@/components/home/Featured'
 import Trending, { type TrendingRow } from '@/components/home/Trending'
 import CollectionCard from '@/components/ui/CollectionCard'
 import ItemCard from '@/components/ui/ItemCard'
+import { getAuctionLots } from '@/lib/auctionLots'
 import { CATEGORIES, getCollections } from '@/lib/catalog'
 import { artUrl } from '@/lib/urls'
 import { ago, count, eth, pct } from '@/lib/format'
@@ -58,6 +60,16 @@ export default function Home() {
       </div>
 
       <Trending rows={rows} />
+
+      <section className={styles.section}>
+        <div className={styles.head}>
+          <h2>Live auctions</h2>
+          <Link href="/auctions" className={styles.more}>
+            View all
+          </Link>
+        </div>
+        <LiveAuctions lots={getAuctionLots()} limit={8} className={styles.rail} />
+      </section>
 
       <section className={styles.section}>
         <div className={styles.head}>
