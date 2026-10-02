@@ -1,0 +1,139 @@
+.analytics
+  display: flex
+  flex-direction: column
+  gap: 20px
+  padding: 24px 0 64px
+
+.toolbar
+  display: flex
+  justify-content: flex-end
+
+.ranges
+  display: inline-flex
+  padding: 4px
+  border: 1px solid var(--line)
+  border-radius: 12px
+  background-color: var(--surface)
+
+  button
+    padding: 7px 14px
+    border: 0
+    border-radius: 9px
+    color: var(--text-2)
+    font-size: 14px
+    font-weight: 600
+    background: none
+
+    &:hover
+      color: var(--text)
+
+  .rangeOn
+    color: var(--text)
+    background-color: var(--surface-hover)
+
+.cards
+  display: grid
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+  gap: 12px
+
+  div
+    padding: 14px 16px
+    border: 1px solid var(--line)
+    border-radius: 14px
+    background-color: var(--surface)
+
+  dt
+    color: var(--text-3)
+    font-size: 13px
+
+  dd
+    margin-top: 4px
+    font-size: 20px
+    font-weight: 700
+
+.up
+  color: var(--up)
+
+.down
+  color: var(--down)
+
+.charts
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 16px
+
+.chart
+  padding: 16px 18px 10px
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+
+  figcaption
+    display: flex
+    flex-wrap: wrap
+    align-items: baseline
+    justify-content: space-between
+    gap: 8px
+    margin-bottom: 8px
+
+  h3
+    font-size: 16px
+    font-weight: 700
+    letter-spacing: 0
+
+  p
+    display: flex
+    align-items: baseline
+    gap: 8px
+    font-size: 14px
+
+    span
+      color: var(--text-3)
+
+  svg
+    display: block
+    width: 100%
+    height: auto
+    cursor: crosshair
+    touch-action: pan-y
+
+.grid
+  stroke: var(--line)
+  stroke-dasharray: 3 4
+
+.tick
+  fill: var(--text-3)
+  font-size: 12px
+
+.line
+  fill: none
+  stroke: var(--accent)
+  stroke-width: 2.5
+  stroke-linejoin: round
+
+.area
+  fill: var(--accent-soft)
+  opacity: .7
+
+.cursor
+  stroke: var(--line-strong)
+
+.dot
+  fill: var(--surface)
+  stroke: var(--accent)
+  stroke-width: 2.5
+
+.bar
+  fill: var(--accent)
+  opacity: .55
+
+.barOn
+  fill: var(--accent)
+
+@media (max-width: 900px)
+  .charts
+    grid-template-columns: 1fr
+
+@media (max-width: 640px)
+  .cards
+    grid-template-columns: repeat(2, minmax(0, 1fr))
