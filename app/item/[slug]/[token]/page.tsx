@@ -9,7 +9,9 @@ import ItemCard from '@/components/ui/ItemCard'
 import Verified from '@/components/ui/Verified'
 import { getItem, getUser } from '@/lib/catalog'
 import { ago, count, eth } from '@/lib/format'
-import { itemDetails, userName } from '@/lib/itemDetails'
+import { itemDetails } from '@/lib/itemDetails'
+import { person } from '@/lib/people'
+import UserLink from '@/components/user/UserLink'
 import { shortAddress } from '@/lib/users'
 import { artUrl } from '@/lib/urls'
 import styles from '@/components/item/Item.module.sass'
@@ -101,7 +103,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
             tokenId={item.tokenId}
             name={item.name}
             collectionName={c.name}
-            ownerName={owner?.name ?? 'Unknown'}
+            owner={owner ? { name: owner.name, address: owner.address } : null}
             price={item.price}
             listingDays={item.listingDays}
             bestOffer={item.bestOffer}
@@ -143,7 +145,9 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
                       <td className="mono">{eth(o.amount)} ETH</td>
                       <td>{(((o.amount - c.stats.floor) / c.stats.floor) * 100).toFixed(0)}%</td>
                       <td>in {o.expiresDays}d</td>
-                      <td className={styles.who}>{userName(o.from)}</td>
+                      <td className={styles.who}>
+                        <UserLink user={person(o.from)} />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -178,8 +182,10 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
                       </span>
                     </td>
                     <td className="mono">{e.price !== null ? `${eth(e.price)} ETH` : '—'}</td>
-                    <td className={styles.who}>{e.kind === 'mint' ? 'NullAddress' : (userName(e.from) ?? '—')}</td>
-                    <td className={styles.who}>{userName(e.to) ?? '—'}</td>
+                    <td className={styles.who}>{e.kind === 'mint' ? 'NullAddress' : <UserLink user={person(e.from)} />}</td>
+                    <td className={styles.who}>
+                      <UserLink user={person(e.to)} />
+                    </td>
                     <td className={styles.time}>{ago(e.ageHours)}</td>
                   </tr>
                 )

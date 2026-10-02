@@ -1,7 +1,8 @@
 import ExpandableText from '@/components/ui/ExpandableText'
 import Verified from '@/components/ui/Verified'
 import { CATEGORIES, type Collection } from '@/lib/catalog'
-import { artUrl } from '@/lib/urls'
+import Link from 'next/link'
+import { artUrl, userUrl } from '@/lib/urls'
 import { count, eth } from '@/lib/format'
 import styles from './Collection.module.sass'
 
@@ -33,7 +34,10 @@ const CollectionHeader = ({ collection: c }: { collection: Collection }) => {
               {c.name} {c.verified && <Verified size={24} />}
             </h1>
             <p className={styles.by}>
-              By <strong>{c.creatorUser.name}</strong> {c.creatorUser.verified && <Verified size={14} />}
+              By{' '}
+              <Link href={userUrl(c.creatorUser.address)}>
+                <strong>{c.creatorUser.name}</strong>
+              </Link> {c.creatorUser.verified && <Verified size={14} />}
               <span className={styles.dot}>·</span>
               {category?.name}
               <span className={styles.dot}>·</span>

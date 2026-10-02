@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { HandCoins, ShoppingCart, Tag } from 'lucide-react'
 import { ago, eth } from '@/lib/format'
-import { artUrl, itemUrl } from '@/lib/urls'
+import { artUrl, itemUrl, userUrl } from '@/lib/urls'
 import styles from './Collection.module.sass'
 
 export type ActivityRow = {
@@ -13,8 +13,8 @@ export type ActivityRow = {
   tokenId: number
   name: string
   price: number
-  fromName: string | null
-  toName: string | null
+  fromUser: { name: string; address: string } | null
+  toUser: { name: string; address: string } | null
   ageHours: number
 }
 
@@ -64,8 +64,8 @@ const ActivityTable = ({ slug, rows }: { slug: string; rows: ActivityRow[] }) =>
                     </Link>
                   </td>
                   <td className={`mono ${styles.num}`}>{eth(r.price)} ETH</td>
-                  <td className={`${styles.hideSm} ${styles.who}`}>{r.fromName ?? '—'}</td>
-                  <td className={`${styles.hideSm} ${styles.who}`}>{r.toName ?? '—'}</td>
+                  <td className={`${styles.hideSm} ${styles.who}`}>{r.fromUser ? <Link href={userUrl(r.fromUser.address)}>{r.fromUser.name}</Link> : '—'}</td>
+                  <td className={`${styles.hideSm} ${styles.who}`}>{r.toUser ? <Link href={userUrl(r.toUser.address)}>{r.toUser.name}</Link> : '—'}</td>
                   <td className={`${styles.num} ${styles.time}`}>{ago(r.ageHours)}</td>
                 </tr>
               )

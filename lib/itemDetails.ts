@@ -1,4 +1,4 @@
-import { getUser, type Collection, type Item } from './catalog'
+import type { Collection, Item } from './catalog'
 import { between, hash, intBetween, pick, rngFor } from './rng'
 import { USERS } from './users'
 
@@ -47,5 +47,4 @@ export const itemDetails = (c: Collection, item: Item) => {
   }
 }
 
-export const userName = (id: string | null) => (id ? (getUser(id)?.name ?? 'Unknown') : null)
 

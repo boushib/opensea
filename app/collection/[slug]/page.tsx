@@ -5,7 +5,8 @@ import ActivityTable, { type ActivityRow } from '@/components/collection/Activit
 import CollectionHeader from '@/components/collection/CollectionHeader'
 import ItemsBrowser, { type BrowserItem } from '@/components/collection/ItemsBrowser'
 import { collectionActivity } from '@/lib/activity'
-import { getCollection, getCollections, getUser } from '@/lib/catalog'
+import { getCollection, getCollections } from '@/lib/catalog'
+import { person } from '@/lib/people'
 import styles from '@/components/collection/Collection.module.sass'
 
 export function generateStaticParams() {
@@ -28,7 +29,7 @@ export default async function CollectionPage({ params, searchParams }: PageProps
   const activity: ActivityRow[] = showActivity
     ? collectionActivity(c)
         .slice(0, 150)
-        .map((e) => ({ ...e, name: c.items[e.tokenId - 1].name, fromName: e.from ? (getUser(e.from)?.name ?? null) : null, toName: e.to ? (getUser(e.to)?.name ?? null) : null }))
+        .map((e) => ({ ...e, name: c.items[e.tokenId - 1].name, fromUser: person(e.from), toUser: person(e.to) }))
     : []
 
   return (

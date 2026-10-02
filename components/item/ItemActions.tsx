@@ -6,7 +6,7 @@ import { CheckCircle2, Clock, HandCoins, ShoppingCart, Tag, X } from 'lucide-rea
 import { useWallet } from '@/components/wallet/WalletProvider'
 import { eth, usd } from '@/lib/format'
 import { useMarket } from '@/lib/market'
-import { artUrl } from '@/lib/urls'
+import { artUrl, userUrl } from '@/lib/urls'
 import styles from './Item.module.sass'
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
   tokenId: number
   name: string
   collectionName: string
-  ownerName: string
+  owner: { name: string; address: string } | null
   price: number | null
   listingDays: number
   bestOffer: number | null
@@ -24,7 +24,7 @@ type Props = {
 type Dialog = 'buy' | 'offer' | null
 
 /** Owner, price and the Buy / Make offer flows, which sign a message with the connected wallet */
-const ItemActions = ({ slug, tokenId, name, collectionName, ownerName, price, listingDays, bestOffer, floor }: Props) => {
+const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listingDays, bestOffer, floor }: Props) => {
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const owned = market.owns(slug, tokenId)
@@ -40,7 +40,14 @@ const ItemActions = ({ slug, tokenId, name, collectionName, ownerName, price, li
   return (
     <>
       <p className={styles.owner}>
-        Owned by <strong>{owned ? 'you' : ownerName}</strong>
+        Owned by{' '}
+        {owned ? (
+          <Link href="/account">you</Link>
+        ) : owner ? (
+          <Link href={userUrl(owner.address)}>{owner.name}</Link>
+        ) : (
+          'someone'
+        )}
       </p>
 
       <div className={styles.priceCard}>
