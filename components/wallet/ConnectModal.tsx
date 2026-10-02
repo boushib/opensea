@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { FlaskConical, Wallet as WalletIcon, X } from 'lucide-react'
+import { FlaskConical, QrCode, Smartphone, Wallet as WalletIcon, X } from 'lucide-react'
+import type { ConnectorKind } from '@/lib/wallet/config'
 import { DEMO_FUNDS, useWallet } from './WalletProvider'
 import styles from './Wallet.module.sass'
 
@@ -9,7 +10,7 @@ import styles from './Wallet.module.sass'
 const ConnectModal = ({ onClose }: { onClose: () => void }) => {
   const wallet = useWallet()
   const [error, setError] = useState('')
-  const [busy, setBusy] = useState(false)
+  const [busy, setBusy] = useState<ConnectorKind | null>(null)
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
@@ -17,15 +18,15 @@ const ConnectModal = ({ onClose }: { onClose: () => void }) => {
     return () => document.removeEventListener('keydown', onKey)
   }, [onClose])
 
-  const connectBrowser = async () => {
-    setBusy(true)
+  const connectBrowser = async (kind: ConnectorKind) => {
+    setBusy(kind)
     setError('')
     try {
-      await wallet.connectBrowser()
+      await wallet.connectBrowser(kind)
     } catch (e) {
-      setError(e instanceof Error && /reject|denied/i.test(e.message) ? 'You cancelled the request in your wallet.' : 'Couldn’t connect to your wallet. Is it unlocked?')
+      setError(e instanceof Error && /reject|denied|closed/i.test(e.message) ? 'You cancelled the request in your wallet.' : 'Couldn’t connect to your wallet. Is it unlocked?')
     }
-    setBusy(false)
+    setBusy(null)
   }
 
   return (
@@ -38,12 +39,12 @@ const ConnectModal = ({ onClose }: { onClose: () => void }) => {
           </button>
         </div>
 
-        <button type="button" className={styles.option} onClick={connectBrowser} disabled={!wallet.hasBrowserWallet || busy}>
+        <button type="button" className={styles.option} onClick={() => connectBrowser('injected')} disabled={!wallet.hasBrowserWallet || !!busy}>
           <span className={styles.optionIcon}>
             <WalletIcon size={22} />
           </span>
           <span className={styles.optionText}>
-            <strong>{busy ? 'Waiting for your wallet…' : 'Browser wallet'}</strong>
+            <strong>{busy === 'injected' ? 'Waiting for your wallet…' : 'Browser wallet'}</strong>
             <span>{wallet.hasBrowserWallet ? 'MetaMask, Rabby, Coinbase Wallet and others, on the Sepolia test network' : 'No wallet extension found in this browser'}</span>
           </span>
         </button>
@@ -56,6 +57,26 @@ const ConnectModal = ({ onClose }: { onClose: () => void }) => {
             to use your own wallet, or try the demo wallet below.
           </p>
         )}
+
+        <button type="button" className={styles.option} onClick={() => connectBrowser('coinbase')} disabled={!wallet.available.coinbase || !!busy}>
+          <span className={styles.optionIcon}>
+            <Smartphone size={22} />
+          </span>
+          <span className={styles.optionText}>
+            <strong>{busy === 'coinbase' ? 'Waiting for Coinbase Wallet…' : 'Coinbase Wallet'}</strong>
+            <span>The Coinbase Wallet app or extension, or a smart wallet with a passkey</span>
+          </span>
+        </button>
+
+        <button type="button" className={styles.option} onClick={() => connectBrowser('walletconnect')} disabled={!wallet.available.walletconnect || !!busy}>
+          <span className={styles.optionIcon}>
+            <QrCode size={22} />
+          </span>
+          <span className={styles.optionText}>
+            <strong>{busy === 'walletconnect' ? 'Scan the code with your phone…' : 'WalletConnect'}</strong>
+            <span>{wallet.available.walletconnect ? 'Scan a QR code with any mobile wallet' : 'Not set up on this site (needs a WalletConnect project ID)'}</span>
+          </span>
+        </button>
 
         <button type="button" className={styles.option} onClick={wallet.connectDemo}>
           <span className={`${styles.optionIcon} ${styles.optionDemo}`}>

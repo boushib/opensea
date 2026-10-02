@@ -86,7 +86,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
       <div className={styles.banner} style={{ backgroundColor: `hsl(${hash(wallet.address) % 360} 42% 72%)` }} />
       <div className={`container ${styles.intro}`}>
         <img src={identicon(wallet.address)} alt="" className={styles.avatar} />
-        <h1>{shortAddress(wallet.address)}</h1>
+        <h1>{wallet.ensName ?? shortAddress(wallet.address)}</h1>
         <div className={styles.meta}>
           <button type="button" className={`mono ${styles.address}`} onClick={copy}>
             {wallet.address} {copied ? <Check size={14} /> : <Copy size={14} />}

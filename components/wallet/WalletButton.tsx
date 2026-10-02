@@ -48,7 +48,7 @@ const WalletButton = () => {
     <div className={styles.account} ref={ref}>
       <button type="button" className={styles.accountButton} onClick={() => setOpen(!open)} aria-expanded={open}>
         <img src={identicon(wallet.address)} alt="" />
-        <span className="mono">{shortAddress(wallet.address)}</span>
+        <span className={wallet.ensName ? undefined : 'mono'}>{wallet.ensName ?? shortAddress(wallet.address)}</span>
         {wallet.wrongNetwork && <AlertTriangle size={16} className={styles.warn} />}
         <ChevronDown size={16} />
       </button>

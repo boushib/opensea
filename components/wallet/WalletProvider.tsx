@@ -3,12 +3,12 @@
 import { createContext, useContext, useEffect, useState, useSyncExternalStore, type ReactNode } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { formatEther } from 'viem'
-import { useBalance, useConnect, useConnection, useConnectors, useDisconnect, useSignMessage, useSwitchChain, WagmiProvider } from 'wagmi'
-import { sepolia } from 'wagmi/chains'
+import { useBalance, useConnect, useConnection, useConnectors, useDisconnect, useEnsName, useSignMessage, useSwitchChain, WagmiProvider } from 'wagmi'
+import { mainnet, sepolia } from 'wagmi/chains'
 import { useMarket } from '@/lib/market'
 import { simulate } from '@/lib/simulator'
 import { loadDemoAccount } from '@/lib/wallet/demo'
-import { wagmiConfig } from '@/lib/wallet/config'
+import { CONNECTOR_IDS, wagmiConfig, type ConnectorKind } from '@/lib/wallet/config'
 import ConnectModal from './ConnectModal'
 
 /** Demo ETH the demo wallet starts with */
@@ -18,12 +18,16 @@ export type Wallet = {
   status: 'disconnected' | 'connecting' | 'connected'
   kind: 'browser' | 'demo' | null
   address: `0x${string}` | null
+  /** The wallet's ENS name on mainnet, like vitalik.eth */
+  ensName: string | null
   /** Balance in ETH: Sepolia ETH for a browser wallet, demo ETH for the demo wallet */
   balance: number | null
   wrongNetwork: boolean
   hasBrowserWallet: boolean
   signMessage: (message: string) => Promise<`0x${string}`>
-  connectBrowser: () => Promise<void>
+  connectBrowser: (kind?: ConnectorKind) => Promise<void>
+  /** Which real-wallet options this build supports */
+  available: Record<ConnectorKind, boolean>
   connectDemo: () => void
   disconnect: () => void
   switchNetwork: () => void
@@ -76,6 +80,7 @@ const WalletState = ({ children }: { children: ReactNode }) => {
 
   const browserAddress = connection.status === 'connected' ? connection.address : null
   const address = browserAddress ?? demo?.address ?? null
+  const ens = useEnsName({ address: browserAddress ?? undefined, chainId: mainnet.id, query: { enabled: !!browserAddress, staleTime: 3600_000 } })
   const balance = useBalance({ address: browserAddress ?? undefined, chainId: sepolia.id, query: { enabled: !!browserAddress } })
   const market = useMarket(demo?.address ?? null)
   // Demo ETH: spent on purchases and mints, earned from sales
@@ -93,6 +98,7 @@ const WalletState = ({ children }: { children: ReactNode }) => {
     status: address ? 'connected' : connection.status === 'connecting' || connection.status === 'reconnecting' ? 'connecting' : 'disconnected',
     kind: browserAddress ? 'browser' : demo ? 'demo' : null,
     address,
+    ensName: browserAddress ? (ens.data ?? null) : null,
     balance: browserAddress ? (balance.data ? Number(formatEther(balance.data.value)) : null) : demo ? Math.max(0, DEMO_FUNDS - demoSpent) : null,
     wrongNetwork: !!browserAddress && connection.chainId !== sepolia.id,
     hasBrowserWallet,
@@ -101,9 +107,16 @@ const WalletState = ({ children }: { children: ReactNode }) => {
       if (demo) return demo.signMessage({ message })
       throw new Error('Connect a wallet first')
     },
-    connectBrowser: async () => {
+    available: {
+      injected: hasBrowserWallet,
+      coinbase: connectors.some((c) => c.id === CONNECTOR_IDS.coinbase),
+      walletconnect: connectors.some((c) => c.id === CONNECTOR_IDS.walletconnect),
+    },
+    connectBrowser: async (kind = 'injected') => {
+      const connector = connectors.find((c) => c.id === CONNECTOR_IDS[kind])
+      if (!connector) throw new Error(`No ${kind} connector`)
       demoStore.set(false)
-      await connect.mutateAsync({ connector: connectors[0], chainId: sepolia.id })
+      await connect.mutateAsync({ connector, chainId: sepolia.id })
       setModalOpen(false)
     },
     connectDemo: () => {
