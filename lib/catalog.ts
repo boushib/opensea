@@ -63,6 +63,8 @@ export type Item = {
 
 export type Collection = Omit<CollectionDef, 'style'> & {
   creatorUser: User
+  /** ISO date the collection launched */
+  launchedAt: string
   items: Item[]
   sales: Sale[]
   traitCounts: Record<string, Record<string, number>>
@@ -150,12 +152,14 @@ const build = (def: CollectionDef): Collection => {
   return {
     ...rest,
     creatorUser: CREATORS[def.creator],
+    launchedAt: new Date(Date.now() - def.launchedDaysAgo * 864e5).toISOString(),
     items,
     sales,
     traitCounts,
     stats: {
       floor: Math.min(...listedPrices),
-      bestOffer: Math.max(...items.map((i) => i.bestOffer ?? 0)),
+      // A collection-wide offer (for any item) sits a little under the floor
+      bestOffer: round(Math.min(...listedPrices) * between(rngFor(def.slug, 'collection-offer'), 0.86, 0.95)),
       listed: listedPrices.length,
       owners: new Set(items.map((i) => i.ownerId)).size,
       // Includes the mint and trading before these 90 days
@@ -191,5 +195,3 @@ export const drawItem = (slug: string, tokenId: number) => {
   if (!def || tokenId < 1 || tokenId > def.size) return null
   return def.style.draw(def.style.traits(rngFor(slug, 'traits', tokenId)), rngFor(slug, 'art', tokenId))
 }
-
-export const artUrl = (slug: string, tokenId: number) => `/art/${slug}/${tokenId}`
