@@ -3,9 +3,20 @@
 
 .layout
   display: grid
+  grid-template-areas: "art info" "details info"
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr)
+  grid-template-rows: auto 1fr
   align-items: start
-  gap: 32px
+  gap: 16px 32px
+
+.artWrap
+  grid-area: art
+
+.left
+  grid-area: details
+
+.right
+  grid-area: info
 
 .left, .right
   display: flex
@@ -297,7 +308,7 @@ section.panel
 
 .tick
   fill: var(--text-3)
-  font-size: 11px
+  font-size: 13px
 
 .line
   fill: none
@@ -556,8 +567,11 @@ section.panel
   text-align: center
 
 @media (max-width: 900px)
+  // Art, then name and price, then the details
   .layout
+    grid-template-areas: "art" "info" "details"
     grid-template-columns: minmax(0, 1fr)
+    grid-template-rows: auto
 
   .rail
     grid-auto-columns: 46%

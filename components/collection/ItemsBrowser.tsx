@@ -40,7 +40,8 @@ const ItemsBrowser = ({ slug, items, traitCounts }: Props) => {
   const [sort, setSort] = useState<Sort>('price-asc')
   const [dense, setDense] = useState(false)
   const [shown, setShown] = useState(PAGE)
-  const [filtersOpen, setFiltersOpen] = useState(true)
+  // null: the default for the screen (open on desktop, closed on phones)
+  const [filtersOpen, setFiltersOpen] = useState<boolean | null>(null)
   const [openTrait, setOpenTrait] = useState<string | null>(null)
 
   const q = query.trim().toLowerCase().replace('#', '')
@@ -88,7 +89,13 @@ const ItemsBrowser = ({ slug, items, traitCounts }: Props) => {
   return (
     <div className={styles.browser}>
       <div className={styles.toolbar}>
-        <button type="button" className={`${styles.toolButton} ${filtersOpen ? styles.toolButtonOn : ''}`} onClick={() => setFiltersOpen(!filtersOpen)} aria-expanded={filtersOpen}>
+        <button
+          type="button"
+          className={`${styles.toolButton} ${filtersOpen ? styles.toolButtonOn : ''}`}
+          // From the default, the first press closes them on desktop and opens them on phones
+          onClick={() => setFiltersOpen(filtersOpen === null ? !window.matchMedia('(min-width: 1001px)').matches : !filtersOpen)}
+          aria-expanded={filtersOpen ?? undefined}
+        >
           <SlidersHorizontal size={18} /> <span>Filters</span>
         </button>
         <label className={styles.search}>
@@ -118,9 +125,9 @@ const ItemsBrowser = ({ slug, items, traitCounts }: Props) => {
         </div>
       </div>
 
-      <div className={`${styles.layout} ${filtersOpen ? '' : styles.layoutFull}`}>
-        {filtersOpen && (
-          <aside className={styles.filters}>
+      <div className={`${styles.layout} ${filtersOpen === false ? styles.layoutFull : ''}`}>
+        {filtersOpen !== false && (
+          <aside className={`${styles.filters} ${filtersOpen === null ? styles.filtersDefault : ''}`}>
             <div className={styles.filtersHead}>
               <strong>Filters</strong>
               <button type="button" className={styles.closeFilters} onClick={() => setFiltersOpen(false)} aria-label="Close filters">
@@ -181,6 +188,9 @@ const ItemsBrowser = ({ slug, items, traitCounts }: Props) => {
                 )
               })}
             </section>
+            <button type="button" className={styles.showItems} onClick={() => setFiltersOpen(false)}>
+              Show {filtered.length.toLocaleString('en-US')} items
+            </button>
           </aside>
         )}
 

@@ -225,6 +225,10 @@
 .filtersHead
   display: none
 
+// Closes the sheet on phones
+.showItems
+  display: none
+
 .closeFilters
   display: grid
   place-items: center
@@ -490,6 +494,23 @@
 
     strong
       font-size: 18px
+
+  // Closed on phones until asked for
+  .filtersDefault
+    display: none
+
+  .showItems
+    position: sticky
+    bottom: 0
+    display: block
+    width: 100%
+    margin-top: 16px
+    padding: 14px
+    border: 0
+    border-radius: 12px
+    color: var(--on-accent)
+    font-weight: 700
+    background-color: var(--accent)
 
 @media (max-width: 700px)
   .intro

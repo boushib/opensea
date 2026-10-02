@@ -40,11 +40,11 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
   return (
     <div className={`container ${styles.page}`}>
       <div className={styles.layout}>
+        <div className={styles.artWrap}>
+          <img src={artUrl(slug, item.tokenId)} alt={item.name} className={styles.art} />
+          <FavoriteButton slug={slug} tokenId={item.tokenId} base={d.favorites} />
+        </div>
         <div className={styles.left}>
-          <div className={styles.artWrap}>
-            <img src={artUrl(slug, item.tokenId)} alt={item.name} className={styles.art} />
-            <FavoriteButton slug={slug} tokenId={item.tokenId} base={d.favorites} />
-          </div>
 
           <details className={styles.panel} open>
             <summary>Traits</summary>
@@ -127,6 +127,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
             {d.offers.length === 0 ? (
               <p className={styles.empty}>No offers yet.</p>
             ) : (
+              <div className={styles.tableWrap}>
               <table className={styles.table}>
                 <thead>
                   <tr>
@@ -147,6 +148,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
                   ))}
                 </tbody>
               </table>
+              </div>
             )}
           </section>
         </div>
