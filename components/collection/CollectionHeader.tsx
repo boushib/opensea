@@ -1,3 +1,4 @@
+import CollectionOffer from './CollectionOffer'
 import ExpandableText from '@/components/ui/ExpandableText'
 import Verified from '@/components/ui/Verified'
 import { CATEGORIES, type Collection } from '@/lib/catalog'
@@ -54,6 +55,7 @@ const CollectionHeader = ({ collection: c }: { collection: Collection }) => {
           </dl>
         </div>
         <ExpandableText text={c.description} />
+        <CollectionOffer slug={c.slug} name={c.name} size={c.size} floor={c.stats.floor} bestOffer={c.stats.bestOffer} avatarToken={c.featured} />
       </div>
     </header>
   )

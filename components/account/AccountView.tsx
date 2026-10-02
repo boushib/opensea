@@ -11,7 +11,7 @@ import { incomingOffers, useMarket } from '@/lib/market'
 import { PEOPLE } from '@/lib/simulator'
 import { useNow } from '@/lib/useNow'
 import { hash } from '@/lib/rng'
-import { artUrl, itemUrl, userUrl } from '@/lib/urls'
+import { artUrl, collectionUrl, itemUrl, userUrl } from '@/lib/urls'
 import { shortAddress } from '@/lib/users'
 import styles from './Account.module.sass'
 
@@ -60,7 +60,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
   const counts: Record<Tab, number> = {
     collected: market.held.length,
     listings: market.listings.length,
-    offers: market.offers.length,
+    offers: market.offers.length + market.collectionOffers.length,
     received: received.length,
     favorites: favorites.length,
     activity: activity.length,
@@ -100,7 +100,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
             <dt>{wallet.kind === 'demo' ? 'Demo balance' : 'Balance'}</dt>
           </div>
           <div>
-            <dd className="mono">{market.offers.length}</dd>
+            <dd className="mono">{counts.offers}</dd>
             <dt>Offers</dt>
           </div>
         </dl>
@@ -216,7 +216,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
           ))}
 
         {tab === 'offers' &&
-          (market.offers.length === 0 ? (
+          (market.offers.length + market.collectionOffers.length === 0 ? (
             <Empty text="Offers you make on items show up here." />
           ) : (
             <div className={styles.tableWrap}>
@@ -231,6 +231,29 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
                   </tr>
                 </thead>
                 <tbody>
+                  {market.collectionOffers.map((o) => (
+                    <tr key={`collection/${o.slug}`}>
+                      <td>
+                        <Link href={collectionUrl(o.slug)} className={styles.item}>
+                          <img src={artUrl(o.slug, 0)} alt="" />
+                          <span>
+                            {o.collectionName}
+                            <small className={styles.muted}>
+                              {' '}· Collection offer, {o.filled} of {o.quantity} filled
+                            </small>
+                          </span>
+                        </Link>
+                      </td>
+                      <td className="mono">{eth(o.amount)} ETH each</td>
+                      <td>{o.expiresDays} days</td>
+                      <td className={styles.muted}>{when(o.at)}</td>
+                      <td>
+                        <button type="button" className={styles.cancel} onClick={() => market.cancelCollectionOffer(o.slug)}>
+                          Cancel
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
                   {market.offers.map((o) => (
                     <tr key={`${o.slug}/${o.tokenId}`}>
                       <td>

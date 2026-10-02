@@ -66,6 +66,40 @@ export const simulate = (address: string, now = Date.now()) => {
     }
   }
 
+  // Collection offers: at 90% of the floor or more, one item fills every minute or so
+  for (const o of next.collectionOffers) {
+    const expiresAt = ms(o.at) + o.expiresDays * day
+    if (o.amount >= o.floor * 0.9) {
+      let filled = o.filled
+      const got: MarketState['purchases'] = []
+      while (filled < o.quantity) {
+        const h = hash(`${o.slug}/${o.at}/${filled}`)
+        const fillAt = ms(o.at) + (50 + filled * 60 + (h % 40)) * 1000
+        if (now < fillAt) break
+        // A random item you don't already hold
+        let tokenId = 1 + (h % o.size)
+        const mine = holdings(next).concat(got)
+        for (let tries = 0; mine.some((p) => p.slug === o.slug && p.tokenId === tokenId) && tries < o.size; tries++) tokenId = (tokenId % o.size) + 1
+        const name = `${o.collectionName} #${tokenId}`
+        got.push({ slug: o.slug, tokenId, name, price: o.amount, at: at(fillAt), signature: o.signature, via: 'offer' })
+        notes.push(note({ kind: 'offer-accepted', title: 'Collection offer filled', body: `You got ${name} for ${o.amount} ETH.`, href: itemUrl(o.slug, tokenId), at: at(fillAt) }))
+        filled++
+      }
+      if (got.length) {
+        next = {
+          ...next,
+          purchases: [...got.reverse(), ...next.purchases],
+          collectionOffers: filled >= o.quantity ? next.collectionOffers.filter((x) => x !== o) : next.collectionOffers.map((x) => (x === o ? { ...x, filled } : x)),
+        }
+        continue
+      }
+    }
+    if (now >= expiresAt) {
+      next = { ...next, collectionOffers: next.collectionOffers.filter((x) => x !== o) }
+      notes.push(note({ kind: 'offer-expired', title: 'Collection offer expired', body: `${o.filled} of ${o.quantity} filled on ${o.collectionName}.`, href: `/collection/${o.slug}`, at: at(expiresAt) }))
+    }
+  }
+
   // Offers others make on what you hold
   const seen = new Set(next.seen)
   for (const p of holdings(next)) {

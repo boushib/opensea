@@ -555,3 +555,65 @@
 
   .hideSm
     display: none
+
+// Collection offer
+.collectionOfferButton
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  margin-top: 16px
+  padding: 11px 18px
+  border: 1px solid var(--line-strong)
+  border-radius: 12px
+  font-weight: 700
+  background-color: var(--surface)
+
+  &:hover
+    background-color: var(--surface-hover)
+
+.myCollectionOffer
+  display: inline-flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 8px
+  margin-top: 16px
+  padding: 10px 14px
+  border-radius: 12px
+  font-size: 14px
+  background-color: var(--accent-soft)
+
+  svg
+    color: var(--accent)
+
+  button
+    padding: 0
+    border: 0
+    color: var(--down)
+    font-weight: 600
+    background: none
+
+.stepper
+  display: inline-flex
+  align-items: center
+  gap: 4px
+  width: fit-content
+  padding: 4px
+  border: 1px solid var(--line-strong)
+  border-radius: 12px
+
+  button
+    width: 38px
+    height: 38px
+    border: 0
+    border-radius: 9px
+    font-size: 20px
+    background: none
+
+    &:hover
+      background-color: var(--surface-hover)
+
+  span
+    min-width: 32px
+    font-size: 17px
+    font-weight: 700
+    text-align: center

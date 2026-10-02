@@ -13,6 +13,8 @@ export type Party = { name: string; address: string }
 export type Purchase = { slug: string; tokenId: number; name: string; price: number; at: string; signature: string; via?: 'buy' | 'offer' | 'auction' | 'mint' }
 export type Listing = { slug: string; tokenId: number; name: string; price: number; days: number; at: string; signature: string; fair: number }
 export type Offer = { slug: string; tokenId: number; name: string; amount: number; expiresDays: number; at: string; signature: string; fair: number }
+/** An offer on any item of a collection, for one or more items */
+export type CollectionOffer = { slug: string; collectionName: string; size: number; amount: number; quantity: number; filled: number; expiresDays: number; at: string; signature: string; floor: number }
 export type Sale = { slug: string; tokenId: number; name: string; price: number; to: Party; at: string; via: 'listing' | 'offer' }
 export type Transfer = { slug: string; tokenId: number; name: string; to: Party; at: string; signature: string }
 export type NoteKind = 'sold' | 'offer-accepted' | 'offer-expired' | 'offer-received' | 'outbid' | 'auction-won' | 'auction-lost' | 'listed' | 'minted'
@@ -22,6 +24,7 @@ export type MarketState = {
   purchases: Purchase[]
   listings: Listing[]
   offers: Offer[]
+  collectionOffers: CollectionOffer[]
   sales: Sale[]
   transfers: Transfer[]
   favorites: string[]
@@ -30,7 +33,7 @@ export type MarketState = {
   seen: string[]
 }
 
-const EMPTY: MarketState = { purchases: [], listings: [], offers: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
+const EMPTY: MarketState = { purchases: [], listings: [], offers: [], collectionOffers: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
 const storageKey = (address: string) => `market:${address.toLowerCase()}`
 const listeners = new Set<() => void>()
 const cache = new Map<string, MarketState>()
@@ -154,6 +157,9 @@ export const useMarket = (address: string | null) => {
       update((s) => ({ ...s, purchases: [...ps, ...s.purchases.filter((x) => !ps.some((p) => same(p.slug, p.tokenId)(x)))] })),
     makeOffer: (o: Offer) => update((s) => ({ ...s, offers: [o, ...s.offers.filter(not(same(o.slug, o.tokenId)))] })),
     cancelOffer: (slug: string, tokenId: number) => update((s) => ({ ...s, offers: s.offers.filter(not(same(slug, tokenId))) })),
+    collectionOfferOn: (slug: string) => state.collectionOffers.find((o) => o.slug === slug) ?? null,
+    makeCollectionOffer: (o: CollectionOffer) => update((s) => ({ ...s, collectionOffers: [o, ...s.collectionOffers.filter((x) => x.slug !== o.slug)] })),
+    cancelCollectionOffer: (slug: string) => update((s) => ({ ...s, collectionOffers: s.collectionOffers.filter((x) => x.slug !== slug) })),
     list: (l: Listing) => update((s) => ({ ...s, listings: [l, ...s.listings.filter(not(same(l.slug, l.tokenId)))] })),
     cancelListing: (slug: string, tokenId: number) => update((s) => ({ ...s, listings: s.listings.filter(not(same(slug, tokenId))) })),
     acceptOffer: (o: IncomingOffer, name: string) =>
