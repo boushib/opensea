@@ -1,0 +1,292 @@
+.header
+  padding: 36px 0 24px
+
+  h1
+    font-size: clamp(30px, 3.4vw, 42px)
+
+  p
+    margin-top: 6px
+    color: var(--text-2)
+
+.layout
+  display: grid
+  grid-template-columns: minmax(0, 1fr) 320px
+  gap: 40px
+  align-items: start
+  padding-bottom: 64px
+
+.form
+  display: flex
+  flex-direction: column
+  gap: 22px
+
+.field
+  display: flex
+  flex-direction: column
+  gap: 8px
+  min-width: 0
+
+  > span
+    font-weight: 600
+
+  em
+    color: var(--text-3)
+    font-size: 13px
+    font-style: normal
+    font-weight: 400
+
+  input, textarea
+    width: 100%
+    padding: 12px 14px
+    border: 1px solid var(--line-strong)
+    border-radius: 12px
+    color: var(--text)
+    font: inherit
+    background-color: var(--surface)
+
+    &:focus
+      border-color: var(--accent)
+      outline: none
+
+  textarea
+    resize: vertical
+
+  small
+    color: var(--text-3)
+    font-size: 13px
+
+.fieldHead
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.shuffle
+  display: inline-flex
+  align-items: center
+  gap: 6px
+  padding: 6px 10px
+  border: 1px solid var(--line-strong)
+  border-radius: 10px
+  font-size: 13px
+  font-weight: 600
+  background-color: var(--surface)
+
+  &:hover
+    background-color: var(--surface-hover)
+
+.styles
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr))
+  gap: 10px
+
+  button
+    display: flex
+    flex-direction: column
+    gap: 6px
+    padding: 6px 6px 10px
+    border: 2px solid var(--line)
+    border-radius: 14px
+    font-size: 13px
+    font-weight: 600
+    background-color: var(--surface)
+
+    &:hover
+      border-color: var(--line-strong)
+
+  img
+    width: 100%
+    aspect-ratio: 1
+    border-radius: 9px
+    background-color: var(--bg-soft)
+
+.styleOn, .styles .styleOn:hover
+  border-color: var(--accent)
+
+.row
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 16px
+
+.amount
+  position: relative
+
+  input
+    padding-right: 52px
+
+  b
+    position: absolute
+    top: 50%
+    right: 14px
+    color: var(--text-3)
+    font-size: 14px
+    transform: translateY(-50%)
+
+.primary
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  height: 52px
+  padding: 0 24px
+  border: 0
+  border-radius: 14px
+  color: var(--on-accent)
+  font-size: 16px
+  font-weight: 700
+  background-color: var(--accent)
+
+  &:hover:not(:disabled)
+    background-color: var(--accent-hover)
+
+  &:disabled
+    opacity: .55
+    cursor: default
+
+.error
+  color: var(--down)
+  font-size: 14px
+
+.fine
+  margin-top: -10px
+  color: var(--text-3)
+  font-size: 13px
+
+.preview
+  position: sticky
+  top: 96px
+  display: flex
+  flex-direction: column
+  gap: 4px
+  padding: 12px 12px 16px
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+
+  strong
+    margin-top: 8px
+    overflow: hidden
+    font-size: 17px
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  span
+    color: var(--text-3)
+    font-size: 14px
+
+.previewArt
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 4px
+  overflow: hidden
+  border-radius: 10px
+
+  img
+    width: 100%
+    aspect-ratio: 1
+    background-color: var(--bg-soft)
+
+.connect
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 10px
+  max-width: 420px
+  margin: 40px auto 80px
+  text-align: center
+
+  p
+    margin-bottom: 8px
+    color: var(--text-2)
+
+// The collection page for something you created
+.mintBar
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 14px
+  margin-top: 18px
+  padding: 14px 16px
+  border: 1px solid var(--line)
+  border-radius: 14px
+  background-color: var(--surface)
+
+  .primary
+    height: 44px
+
+.progress
+  flex: 1 1 200px
+  min-width: 0
+
+  span
+    color: var(--text-2)
+    font-size: 14px
+
+.bar
+  height: 8px
+  margin-top: 6px
+  overflow: hidden
+  border-radius: 99px
+  background-color: var(--bg-soft)
+
+  i
+    display: block
+    height: 100%
+    border-radius: inherit
+    background-color: var(--accent)
+
+.stepper
+  display: inline-flex
+  align-items: center
+  overflow: hidden
+  border: 1px solid var(--line-strong)
+  border-radius: 12px
+
+  button
+    width: 40px
+    height: 42px
+    border: 0
+    background: none
+
+    &:hover:not(:disabled)
+      background-color: var(--surface-hover)
+
+    &:disabled
+      opacity: .4
+
+  span
+    min-width: 32px
+    font-weight: 700
+    text-align: center
+
+.items
+  padding-block: 28px 64px
+
+  h2
+    margin-bottom: 16px
+    font-size: 20px
+
+.missing
+  max-width: 480px
+  margin-block: 60px 90px
+  text-align: center
+
+  p
+    margin: 8px 0 18px
+    color: var(--text-2)
+
+  a
+    color: var(--accent)
+    font-weight: 600
+
+@media (max-width: 900px)
+  .layout
+    grid-template-columns: 1fr
+
+  .preview
+    position: static
+    order: -1
+    max-width: 360px
+
+@media (max-width: 520px)
+  .row
+    grid-template-columns: 1fr

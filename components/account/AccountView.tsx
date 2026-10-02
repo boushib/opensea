@@ -11,14 +11,16 @@ import { incomingOffers, useMarket } from '@/lib/market'
 import { PEOPLE } from '@/lib/simulator'
 import { useNow } from '@/lib/useNow'
 import { hash } from '@/lib/rng'
+import { createdUrl } from '@/lib/created'
 import { artUrl, collectionUrl, itemUrl, userUrl } from '@/lib/urls'
 import { shortAddress } from '@/lib/users'
+import card from '@/components/ui/ItemCard.module.sass'
 import styles from './Account.module.sass'
 
-export type Tab = 'collected' | 'listings' | 'offers' | 'received' | 'favorites' | 'activity'
+export type Tab = 'collected' | 'created' | 'listings' | 'offers' | 'received' | 'favorites' | 'activity'
 export type CollectionMeta = { name: string; floor: number; verified: boolean }
 
-const LABELS: Record<Tab, string> = { collected: 'Collected', listings: 'Listings', offers: 'Offers made', received: 'Offers received', favorites: 'Favorites', activity: 'Activity' }
+const LABELS: Record<Tab, string> = { collected: 'Collected', created: 'Created', listings: 'Listings', offers: 'Offers made', received: 'Offers received', favorites: 'Favorites', activity: 'Activity' }
 
 const when = (iso: string) => new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
@@ -43,8 +45,9 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
       </div>
     )
 
-  const name = (slug: string, tokenId: number) => `${collections[slug]?.name ?? slug} #${tokenId}`
-  const value = market.held.reduce((s, p) => s + (collections[p.slug]?.floor ?? 0), 0)
+  const created = (slug: string) => market.creations.find((c) => c.slug === slug)
+  const name = (slug: string, tokenId: number) => `${collections[slug]?.name ?? created(slug)?.name ?? slug} #${tokenId}`
+  const value = market.held.reduce((s, p) => s + (collections[p.slug]?.floor ?? created(p.slug)?.value ?? 0), 0)
   const received = now ? market.held.flatMap((p) => incomingOffers(p, PEOPLE, now).map((o) => ({ ...o, name: p.name }))).sort((a, b) => b.at - a.at) : []
   const favorites = market.favorites.map((k) => {
     const [slug, id] = k.split('/')
@@ -62,6 +65,7 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
   ].sort((a, b) => b.at.localeCompare(a.at))
   const counts: Record<Tab, number> = {
     collected: market.held.length,
+    created: market.creations.length,
     listings: market.listings.length,
     offers: market.offers.length + market.collectionOffers.length + bids.length,
     received: received.length,
@@ -207,6 +211,28 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
             </div>
           ))}
 
+        {tab === 'created' &&
+          (market.creations.length === 0 ? (
+            <Empty text="Collections you create show up here." action={{ href: '/create', label: 'Create a collection' }} />
+          ) : (
+            <div className={styles.grid}>
+              {market.creations.map((c) => (
+                <Link key={c.slug} href={createdUrl(c.slug)} className={card.card}>
+                  <div className={card.art}>
+                    <img src={artUrl(c.slug, 1)} alt="" loading="lazy" width={400} height={400} />
+                  </div>
+                  <div className={card.body}>
+                    <strong>{c.name}</strong>
+                    <span className={`mono ${card.price}`}>{eth(c.value)} ETH</span>
+                    <span className={card.muted}>
+                      {c.minted} of {c.size} minted
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ))}
+
         {tab === 'favorites' &&
           (favorites.length === 0 ? (
             <Empty text="Tap the heart on any item to save it here." />
@@ -342,12 +368,12 @@ const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<strin
   )
 }
 
-const Empty = ({ text }: { text: string }) => (
+const Empty = ({ text, action = { href: '/explore', label: 'Explore collections' } }: { text: string; action?: { href: string; label: string } }) => (
   <div className={styles.empty}>
     <strong>Nothing here yet</strong>
     <span>{text}</span>
-    <Link href="/explore" className={styles.primary}>
-      Explore collections
+    <Link href={action.href} className={styles.primary}>
+      {action.label}
     </Link>
   </div>
 )

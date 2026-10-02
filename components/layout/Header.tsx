@@ -17,6 +17,7 @@ const LINKS = [
   { href: '/explore', label: 'Explore' },
   { href: '/rankings', label: 'Rankings' },
   { href: '/auctions', label: 'Auctions' },
+  { href: '/create', label: 'Create' },
 ]
 
 const Header = ({ collections }: { collections: SearchCollection[] }) => {

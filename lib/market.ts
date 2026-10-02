@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from 'react'
 import type { Bid } from './auctions'
+import type { Creation } from './created'
 import { itemName } from './names'
 import { hash } from './rng'
 
@@ -11,7 +12,17 @@ import { hash } from './rng'
  * offers on your items) are simulated by lib/simulator.ts.
  */
 export type Party = { name: string; address: string }
-export type Purchase = { slug: string; tokenId: number; name: string; price: number; at: string; signature: string; via?: 'buy' | 'offer' | 'auction' | 'mint' }
+export type Purchase = {
+  slug: string
+  tokenId: number
+  name: string
+  price: number
+  at: string
+  signature: string
+  via?: 'buy' | 'offer' | 'auction' | 'mint'
+  /** What a free mint is worth, so collectors have something to base offers on */
+  value?: number
+}
 export type Listing = { slug: string; tokenId: number; name: string; price: number; days: number; at: string; signature: string; fair: number }
 export type Offer = { slug: string; tokenId: number; name: string; amount: number; expiresDays: number; at: string; signature: string; fair: number }
 /** An offer on any item of a collection, for one or more items */
@@ -28,6 +39,8 @@ export type MarketState = {
   collectionOffers: CollectionOffer[]
   /** Your bids on live auctions, until each auction is settled */
   bids: Bid[]
+  /** Collections you launched */
+  creations: Creation[]
   sales: Sale[]
   transfers: Transfer[]
   favorites: string[]
@@ -36,7 +49,7 @@ export type MarketState = {
   seen: string[]
 }
 
-const EMPTY: MarketState = { purchases: [], listings: [], offers: [], collectionOffers: [], bids: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
+const EMPTY: MarketState = { purchases: [], listings: [], offers: [], collectionOffers: [], bids: [], creations: [], sales: [], transfers: [], favorites: [], notes: [], seen: [] }
 const storageKey = (address: string) => `market:${address.toLowerCase()}`
 const listeners = new Set<() => void>()
 const cache = new Map<string, MarketState>()
@@ -115,6 +128,8 @@ export type IncomingOffer = { id: string; slug: string; tokenId: number; from: P
  * arriving over the first minutes after you got it. Same item and time, same offers.
  */
 export const incomingOffers = (p: Purchase, people: Party[], now: number): IncomingOffer[] => {
+  const base = p.price || p.value || 0
+  if (!base) return []
   const seed = hash(`${p.slug}/${p.tokenId}/${p.at}`)
   const n = 1 + (seed % 3)
   const start = new Date(p.at).getTime()
@@ -125,7 +140,7 @@ export const incomingOffers = (p: Purchase, people: Party[], now: number): Incom
       slug: p.slug,
       tokenId: p.tokenId,
       from: people[h % people.length],
-      amount: Math.round(p.price * (0.75 + ((h >>> 8) % 23) / 100) * 1e4) / 1e4,
+      amount: Math.round(base * (0.75 + ((h >>> 8) % 23) / 100) * 1e4) / 1e4,
       at: start + (45 + i * 70 + ((h >>> 4) % 60)) * 1000,
     }
   })
@@ -164,6 +179,22 @@ export const useMarket = (address: string | null) => {
     makeCollectionOffer: (o: CollectionOffer) => update((s) => ({ ...s, collectionOffers: [o, ...s.collectionOffers.filter((x) => x.slug !== o.slug)] })),
     bidsOn: (auctionId: string) => state.bids.filter((b) => b.id === auctionId),
     placeBid: (b: Bid) => update((s) => ({ ...s, bids: [b, ...s.bids] })),
+    creationOf: (slug: string) => state.creations.find((c) => c.slug === slug) ?? null,
+    create: (c: Creation) => update((s) => ({ ...s, creations: [c, ...s.creations] })),
+    /** Mints the next `count` items of your collection into your wallet */
+    mint: (slug: string, count: number, at: string, signature: string) =>
+      update((s) => {
+        const c = s.creations.find((x) => x.slug === slug)
+        if (!c) return s
+        const n = Math.min(count, c.size - c.minted)
+        const minted: Purchase[] = Array.from({ length: n }, (_, i) => ({ slug, tokenId: c.minted + n - i, name: `${c.name} #${c.minted + n - i}`, price: 0, value: c.value, at, signature, via: 'mint' }))
+        return {
+          ...s,
+          purchases: [...minted, ...s.purchases],
+          creations: s.creations.map((x) => (x === c ? { ...x, minted: x.minted + n } : x)),
+          notes: [note({ kind: 'minted', title: `Minted ${n} from ${c.name}`, body: `${n === 1 ? 'It’s' : 'They’re'} in your wallet now.`, href: `/created/${slug}`, at }), ...s.notes].slice(0, 50),
+        }
+      }),
     cancelCollectionOffer: (slug: string) => update((s) => ({ ...s, collectionOffers: s.collectionOffers.filter((x) => x.slug !== slug) })),
     list: (l: Listing) => update((s) => ({ ...s, listings: [l, ...s.listings.filter(not(same(l.slug, l.tokenId)))] })),
     cancelListing: (slug: string, tokenId: number) => update((s) => ({ ...s, listings: s.listings.filter(not(same(slug, tokenId))) })),
