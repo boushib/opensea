@@ -35,16 +35,6 @@
 
 <img src="docs/screenshots/profile.png" alt="Profile of the connected wallet" width="100%" />
 
-**Dark mode:** follows your system setting, with a switch in the header
-
-<img src="docs/screenshots/home-dark.png" alt="Home page in dark mode" width="100%" />
-
-<img src="docs/screenshots/rankings-dark.png" alt="Rankings in dark mode" width="100%" />
-
-**On phones**
-
-<img src="docs/screenshots/mobile.png" alt="Home, collection and item pages on a phone" width="100%" />
-
 ## About
 
 I first built this in 2022 with Create React App, Sanity and thirdweb, on the Rinkeby test network. All of those have since been retired, so in 2026 I rebuilt it from scratch on **Next.js 16** (App Router), **React 19** and **TypeScript**, with **wagmi** and **viem** for wallets and **Sass modules** for styling.
