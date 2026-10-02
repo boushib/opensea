@@ -17,6 +17,7 @@ const eslintConfig = defineConfig([
     ".next/**",
     // A second dev server's build folder (see the dev:agent script)
     ".next-agent/**",
+    ".next-build/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
