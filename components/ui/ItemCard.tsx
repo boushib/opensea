@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { artUrl } from '@/lib/catalog'
+import { artUrl } from '@/lib/urls'
 import { eth } from '@/lib/format'
 import styles from './ItemCard.module.sass'
 

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { artUrl, type Collection } from '@/lib/catalog'
+import type { Collection } from '@/lib/catalog'
+import { artUrl } from '@/lib/urls'
 import { eth } from '@/lib/format'
 import Verified from './Verified'
 import styles from './CollectionCard.module.sass'
