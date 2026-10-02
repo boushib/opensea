@@ -61,10 +61,10 @@ export default async function SearchPage({ searchParams }: PageProps<'/search'>)
           <div className={styles.items}>
             {numbered.map((n) => {
               const item = collections.find((c) => c.slug === n.slug)!.items[n.tokenId - 1]
-              return <ItemCard key={`${n.slug}-${n.tokenId}`} slug={n.slug} tokenId={n.tokenId} name={n.name} rank={item.rank} price={item.price} lastSale={item.lastSale?.price ?? null} />
+              return <ItemCard key={`${n.slug}-${n.tokenId}`} slug={n.slug} tokenId={n.tokenId} name={n.name} rank={item.rank} price={item.price} lastSale={item.lastSale?.price ?? null} buyable />
             })}
             {byTrait.map(({ c, i }) => (
-              <ItemCard key={`${c.slug}-${i.tokenId}`} slug={c.slug} tokenId={i.tokenId} name={i.name} rank={i.rank} price={i.price} lastSale={i.lastSale?.price ?? null} />
+              <ItemCard key={`${c.slug}-${i.tokenId}`} slug={c.slug} tokenId={i.tokenId} name={i.name} rank={i.rank} price={i.price} lastSale={i.lastSale?.price ?? null} buyable />
             ))}
           </div>
         </section>

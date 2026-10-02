@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRightLeft, CheckCircle2, Clock, HandCoins, ShoppingCart, Tag } from 'lucide-react'
+import CartButton from '@/components/cart/CartButton'
 import { useWallet } from '@/components/wallet/WalletProvider'
 import { eth, usd } from '@/lib/format'
 import { incomingOffers, useMarket, type IncomingOffer } from '@/lib/market'
@@ -123,6 +124,7 @@ const ItemActions = ({ slug, tokenId, name, collectionName, owner, price, listin
                     <ShoppingCart size={18} /> Buy now
                   </button>
                 )}
+                {shownPrice !== null && <CartButton item={{ slug, tokenId, name, price: shownPrice }} variant="wide" />}
                 <button type="button" className={shownPrice !== null ? styles.secondary : styles.primary} onClick={() => start({ kind: 'offer' })}>
                   <HandCoins size={18} /> {myOffer ? 'Update offer' : 'Make offer'}
                 </button>

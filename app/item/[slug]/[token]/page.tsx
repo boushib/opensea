@@ -204,7 +204,7 @@ export default async function ItemPage({ params }: PageProps<'/item/[slug]/[toke
           </div>
           <div className={styles.rail}>
             {more.map((i) => (
-              <ItemCard key={i.tokenId} slug={slug} tokenId={i.tokenId} name={i.name} rank={i.rank} price={i.price} lastSale={i.lastSale?.price ?? null} />
+              <ItemCard key={i.tokenId} slug={slug} tokenId={i.tokenId} name={i.name} rank={i.rank} price={i.price} lastSale={i.lastSale?.price ?? null} buyable />
             ))}
           </div>
         </section>

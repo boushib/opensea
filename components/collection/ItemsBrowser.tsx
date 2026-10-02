@@ -224,6 +224,7 @@ const ItemsBrowser = ({ slug, items, traitCounts }: Props) => {
                   rank={i.rank}
                   price={i.price}
                   lastSale={i.lastSale}
+                  buyable
                   note={sort === 'recent' && i.lastSaleAge !== null ? `Sold ${ago(i.lastSaleAge)}` : undefined}
                 />
               ))}
