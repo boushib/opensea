@@ -6,12 +6,13 @@ Today the marketplace runs without a blockchain backend. This document records w
 
 | Part | Today |
 | --- | --- |
-| Wallet connection | Real: MetaMask, Rabby or any browser wallet on Sepolia |
+| Wallet connection | Real: browser wallets, Coinbase Wallet and WalletConnect on Sepolia; ENS names from mainnet |
 | Balance | Real: read from a public Sepolia node |
 | Signatures | Real: buying and offers ask the wallet to sign a message |
 | NFTs and collections | Generated in the app from fixed seeds (`lib/catalog.ts`); no contract exists |
-| Buying, selling, offers | Signed messages only: no ETH moves and no token changes hands |
-| Your activity | Saved in your browser (`lib/market.ts`); nobody else sees it, and nothing verifies the signatures |
+| Buying, selling, offers, auctions, minting | Signed messages only: no ETH moves and no token changes hands |
+| Other collectors | Simulated in your browser (`lib/simulator.ts`): they buy, accept, offer and bid by fixed rules |
+| Your activity and created collections | Saved in your browser (`lib/market.ts`); nobody else sees them, and nothing verifies the signatures |
 
 ## What an on-chain version needs
 
@@ -53,8 +54,9 @@ The chain can't answer "what's listed in this collection under 1 ETH" quickly, a
 1. ERC-721 contract, deploy script and a mint of one collection on Sepolia
 2. Seaport listings and purchases for that collection, behind an "On-chain mode" switch
 3. Backend: order book and indexer, then stats and activity from indexed data
-4. Offers, collection offers and auctions through Seaport
-5. Notifications from indexed events
+4. Offers, collection offers and auctions through Seaport (English auctions need a bid-escrow contract or Seaport's ascending orders)
+5. User-created collections: a factory contract that deploys an ERC-721 per collection and mints to the creator
+6. Notifications from indexed events, replacing the simulator
 
 ## Out of scope for now
 

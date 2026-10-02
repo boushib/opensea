@@ -46,17 +46,22 @@ It runs entirely on its own: no database, no API keys and no NFT API. Seven made
 ### Marketplace
 - **Home:** a carousel of featured collections, trending collections by 24h, 7-day or all-time volume, items that just sold, notable collections and categories
 - **Explore** by category, and **Rankings** sortable by volume, change, floor price, sales, owners or items
-- **Collections:** banner, creator, floor price, best offer, volume, listed share and owners; items filtered by buy-now, price range and every trait (with counts), searched, sorted five ways and shown in two grid sizes; an activity feed of sales, listings and offers
+- **Collections:** banner, creator, floor price, best offer, volume, listed share and owners; items filtered by buy-now, price range and every trait (with counts), searched, sorted five ways and shown in two grid sizes; an activity feed of sales, listings and offers; **analytics** with floor price and volume charts over 7, 30 or 90 days
 - **Items:** traits with how common each value is, rarity rank, contract details, a price history chart, offers, the item's activity and more from the collection
+- **Live auctions** on the home page and at `/auctions`, with countdowns and bid histories
+- **Profiles** for every collector and creator, linked from owners, buyers and activity
 - **Search** in the header with instant suggestions (press `/`), including items by number ("moonfolk 12") and by trait ("crown", "laser")
 
 ### Wallet and trading
-- Connect **MetaMask, Rabby or any browser wallet** on the **Sepolia** test network, with your balance and a prompt to switch networks
+- Connect **MetaMask, Rabby or any browser wallet**, **Coinbase Wallet**, or a mobile wallet through **WalletConnect** (with a project ID), on the **Sepolia** test network. Your balance, your **ENS name** and a prompt to switch networks are shown
 - Or use the **demo wallet**: no extension needed, it lives in your browser and starts with 25 demo ETH
-- **Buy now** and **Make offer** ask your wallet to sign a message; the item then shows as yours, or your offer appears with a Cancel link
-- A **profile** with collected items, favorites, offers and signed activity
+- **Buy** one item or several at once from the **cart**, **make offers** on items or on a whole collection, and **bid in auctions**
+- **Sell** what you own: list it, accept offers collectors make on it, or transfer it to another address
+- **Create a collection:** name it, pick one of seven art styles, choose its size and mint the items into your wallet, then list and sell them
+- **Notifications** for sales, accepted and received offers, filled collection offers, being outbid, and auctions won or lost
+- A **profile** with collected and created items, listings, offers made and received, favorites and signed activity
 
-> This is a demo. Buying and offers are signed messages, so no funds ever move, even with a real wallet.
+> This is a demo. Every trade is a signed message, so no funds ever move, even with a real wallet. Other collectors are simulated in your browser (`lib/simulator.ts`): they buy fairly priced listings, accept good offers, fill collection offers, make offers on what you hold and bid against you in auctions.
 
 ### Design
 - Flat colors, light and dark themes applied before the first paint, Geist and Geist Mono
@@ -69,7 +74,9 @@ Everything comes from seeded random numbers (`lib/rng.ts`), so it's the same on 
 - Each collection has an **art style** (`lib/art/`) that picks an item's traits from weighted options and draws it as SVG. Art is served at `/art/<collection>/<token>` and cached forever.
 - **Rarity** comes from how often each trait value appears; rank 1 is the rarest item.
 - **Prices, owners, listings, offers and 90 days of sales** (`lib/catalog.ts`) are generated around each collection's base price, with rarer items worth more. Stats like floor, volume, owners and 24h change are calculated from them.
-- What you do with a wallet (purchases, offers, favorites) is saved in your browser, per wallet address (`lib/market.ts`).
+- What you do with a wallet (purchases, listings, offers, bids, created collections, favorites, notifications) is saved in your browser, per wallet address (`lib/market.ts`).
+- **Auctions** (`lib/auctions.ts`) run on repeating cycles; each run's rival bids come from its seed, and rivals counter your bids up to a hidden ceiling.
+- **Created collections** keep their art style and a seed in the slug (like `c-moonfolk--k3j9x2`), so the server can draw every item without storing anything.
 
 ## Roadmap
 
@@ -84,7 +91,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). No environment variables are needed.
+Open [http://localhost:3000](http://localhost:3000). No environment variables are needed. To turn on WalletConnect, copy `.env.example` to `.env.local` and add a free project ID from [Reown](https://dashboard.reown.com).
 
 To use your own wallet, install [MetaMask](https://metamask.io/download/) (or another browser wallet) and pick the Sepolia test network. Free Sepolia ETH is available from public faucets, but you don't need any: signing costs nothing.
 
@@ -101,12 +108,14 @@ To use your own wallet, install [MetaMask](https://metamask.io/download/) (or an
 ## Project structure
 
 ```
-app/                  Pages (home, explore, rankings, collection, item, account, search) and the /art route
-components/           Layout (header, search, footer), cards, collection, item, wallet and account UI
+app/                  Pages (home, explore, rankings, collection, item, auctions, create, account, user, search) and the /art route
+components/           Layout, cards, collection, item, auction, cart, create, wallet and account UI
 lib/art/              One SVG art style per collection
 lib/catalog.ts        Collections, items, owners, prices and sales, built from seeds
-lib/market.ts         Purchases, offers and favorites per wallet, saved in the browser
-lib/wallet/           wagmi config (Sepolia) and the demo wallet
+lib/market.ts         Everything a wallet does, saved in the browser
+lib/simulator.ts      The simulated collectors who trade with you
+lib/auctions.ts       Auction cycles, rival bids and results
+lib/wallet/           wagmi config (Sepolia, ENS on mainnet) and the demo wallet
 ```
 
 ## Disclaimer
