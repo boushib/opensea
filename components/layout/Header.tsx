@@ -36,13 +36,20 @@ const Header = ({ collections }: { collections: SearchCollection[] }) => {
               {label}
             </Link>
           ))}
+          {/* On small phones the theme switch lives in the menu */}
+          <div className={styles.menuTheme}>
+            <span>Theme</span>
+            <ThemeToggle />
+          </div>
         </nav>
         <Search collections={collections} />
         <div className={styles.actions}>
           <Link href="/search" className={`${styles.iconButton} ${styles.searchButton}`} aria-label="Search">
             <SearchIcon size={18} />
           </Link>
-          <ThemeToggle />
+          <span className={styles.headerTheme}>
+            <ThemeToggle />
+          </span>
           <WalletButton />
           <button type="button" className={`${styles.iconButton} ${styles.menuButton}`} onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
             {open ? <X size={20} /> : <Menu size={20} />}

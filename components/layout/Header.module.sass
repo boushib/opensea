@@ -74,6 +74,12 @@
 .menuButton, .searchButton
   display: none
 
+.menuTheme
+  display: none
+
+.headerTheme
+  display: contents
+
 @media (max-width: 800px)
   .inner
     gap: 12px
@@ -98,3 +104,30 @@
 
   .navOpen
     display: flex
+
+@media (max-width: 560px)
+  .inner
+    gap: 8px
+
+  .actions
+    gap: 6px
+
+  .iconButton
+    width: 38px
+    height: 38px
+
+  .headerTheme
+    display: none
+
+  .menuTheme
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 8px 12px
+    color: var(--text-2)
+    font-weight: 600
+
+@media (max-width: 360px)
+  .logo span
+    display: none
+

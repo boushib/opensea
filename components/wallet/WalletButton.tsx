@@ -25,7 +25,14 @@ const WalletButton = () => {
   if (!wallet.address)
     return (
       <button type="button" className={styles.connect} onClick={wallet.openConnect} disabled={wallet.status === 'connecting'}>
-        {wallet.status === 'connecting' ? 'Connecting…' : 'Connect wallet'}
+        {wallet.status === 'connecting' ? (
+          'Connecting…'
+        ) : (
+          <>
+            <span className={styles.long}>Connect wallet</span>
+            <span className={styles.short}>Connect</span>
+          </>
+        )}
       </button>
     )
 
