@@ -1,0 +1,563 @@
+.page
+  padding-top: 28px
+
+.layout
+  display: grid
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr)
+  align-items: start
+  gap: 32px
+
+.left, .right
+  display: flex
+  flex-direction: column
+  gap: 16px
+  min-width: 0
+
+.artWrap
+  position: relative
+  overflow: hidden
+  border: 1px solid var(--line)
+  border-radius: 18px
+  background-color: var(--bg-soft)
+
+.art
+  width: 100%
+  aspect-ratio: 1
+  object-fit: cover
+
+.favorite
+  position: absolute
+  top: 12px
+  right: 12px
+  display: flex
+  align-items: center
+  gap: 6px
+  padding: 8px 12px
+  border: 0
+  border-radius: 12px
+  color: #fff
+  font-size: 14px
+  font-weight: 600
+  background-color: rgba(0, 0, 0, .55)
+  transition: background-color .15s
+
+  &:hover
+    background-color: rgba(0, 0, 0, .7)
+
+.favoriteOn
+  color: #ff5c7a
+
+// Panels and disclosures
+.panel
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+
+  > summary, > h2
+    padding: 16px 20px
+    font-size: 16px
+    font-weight: 700
+    letter-spacing: 0
+    cursor: pointer
+    list-style-position: inside
+
+  > h2
+    cursor: default
+
+  &[open] > summary, > h2
+    border-bottom: 1px solid var(--line)
+
+section.panel
+  margin-top: 0
+
+.page > .panel
+  margin-top: 24px
+
+.traits
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))
+  gap: 10px
+  padding: 16px
+
+.trait
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 12px 8px
+  border: 1px solid var(--accent-soft)
+  border-radius: 12px
+  text-align: center
+  background-color: var(--accent-soft)
+  transition: border-color .15s
+
+  &:hover
+    border-color: var(--accent)
+
+  span
+    color: var(--accent)
+    font-size: 11px
+    font-weight: 700
+    letter-spacing: .04em
+    text-transform: uppercase
+
+  strong
+    margin: 2px 0
+    font-size: 15px
+    font-weight: 700
+
+  em
+    color: var(--text-3)
+    font-size: 12px
+    font-style: normal
+
+.about
+  padding: 16px 20px
+  color: var(--text-2)
+
+.details
+  display: flex
+  flex-direction: column
+  gap: 10px
+  margin: 0
+  padding: 16px 20px
+
+  div
+    display: flex
+    justify-content: space-between
+    gap: 16px
+    font-size: 14px
+
+  dt
+    color: var(--text-2)
+
+  dd
+    margin: 0
+    font-weight: 600
+
+// Right column
+.collection
+  display: inline-flex
+  align-items: center
+  gap: 6px
+  width: fit-content
+  color: var(--accent)
+  font-weight: 600
+
+.right h1
+  font-size: clamp(28px, 3vw, 38px)
+
+.owner
+  color: var(--text-2)
+
+  strong
+    color: var(--accent)
+    font-weight: 600
+
+.chips
+  display: flex
+  flex-wrap: wrap
+  gap: 8px
+
+  span
+    display: inline-flex
+    align-items: center
+    gap: 6px
+    padding: 6px 12px
+    border-radius: 10px
+    color: var(--text-2)
+    font-size: 13px
+    font-weight: 500
+    background-color: var(--bg-soft)
+
+.priceCard
+  overflow: hidden
+  border: 1px solid var(--line)
+  border-radius: 16px
+  background-color: var(--surface)
+
+.saleEnds
+  display: flex
+  align-items: center
+  gap: 8px
+  padding: 14px 20px
+  border-bottom: 1px solid var(--line)
+  color: var(--text-2)
+  font-size: 14px
+
+.priceBody
+  padding: 18px 20px 20px
+
+.priceLabel
+  color: var(--text-2)
+  font-size: 14px
+
+.priceRow
+  display: flex
+  align-items: baseline
+  gap: 12px
+  margin: 2px 0 16px
+
+  strong
+    font-size: 32px
+    font-weight: 700
+
+  span
+    color: var(--text-3)
+
+.buttons
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+  gap: 10px
+
+.primary, .secondary
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 8px
+  width: 100%
+  height: 52px
+  border: 0
+  border-radius: 14px
+  font-size: 16px
+  font-weight: 700
+  transition: background-color .15s, border-color .15s
+
+  &:disabled
+    opacity: .55
+    cursor: default
+
+.primary
+  color: var(--on-accent)
+  background-color: var(--accent)
+
+  &:hover:not(:disabled)
+    background-color: var(--accent-hover)
+
+.secondary
+  border: 1px solid var(--line-strong)
+  background-color: var(--surface)
+
+  &:hover:not(:disabled)
+    background-color: var(--surface-hover)
+
+.myOffer
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 6px
+  margin-top: 14px
+  padding: 10px 12px
+  border-radius: 12px
+  font-size: 14px
+  background-color: var(--accent-soft)
+
+  button
+    margin-left: auto
+    padding: 0
+    border: 0
+    color: var(--down)
+    font-weight: 600
+    background: none
+
+.ownedNote
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 8px
+  padding: 20px
+  font-weight: 600
+
+  svg
+    color: var(--up)
+
+.link
+  color: var(--accent)
+
+// Chart
+.chart
+  padding: 16px 20px 12px
+
+  figcaption
+    display: flex
+    flex-wrap: wrap
+    gap: 6px
+    margin-bottom: 8px
+    font-size: 14px
+
+    span
+      color: var(--text-3)
+
+  svg
+    width: 100%
+    height: auto
+
+.grid
+  stroke: var(--line)
+  stroke-dasharray: 3 4
+
+.tick
+  fill: var(--text-3)
+  font-size: 11px
+
+.line
+  fill: none
+  stroke: var(--accent)
+  stroke-width: 2.5
+  stroke-linejoin: round
+
+.point
+  fill: var(--surface)
+  stroke: var(--accent)
+  stroke-width: 2.5
+
+.empty
+  padding: 24px 20px
+  color: var(--text-3)
+  font-size: 14px
+
+// Tables
+.tableWrap
+  overflow-x: auto
+
+.table
+  width: 100%
+  border-collapse: collapse
+
+  th
+    padding: 10px 20px
+    color: var(--text-3)
+    font-size: 13px
+    font-weight: 500
+    text-align: left
+
+  td
+    padding: 12px 20px
+    border-top: 1px solid var(--line)
+    font-size: 14px
+    white-space: nowrap
+
+.event
+  display: inline-flex
+  align-items: center
+  gap: 8px
+  font-weight: 600
+
+.who
+  max-width: 180px
+  overflow: hidden
+  color: var(--accent)
+  text-overflow: ellipsis
+
+.time
+  color: var(--text-3)
+
+// More from the collection
+.more
+  margin-top: 40px
+
+.moreHead
+  display: flex
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 16px
+
+  h2
+    font-size: 22px
+
+  a
+    color: var(--accent)
+    font-weight: 600
+
+.rail
+  display: grid
+  grid-auto-columns: minmax(200px, 1fr)
+  grid-auto-flow: column
+  gap: 16px
+  overflow-x: auto
+  padding-bottom: 8px
+
+// Dialogs
+.overlay
+  position: fixed
+  inset: 0
+  z-index: 100
+  display: grid
+  place-items: center
+  padding: 16px
+  background-color: rgba(0, 0, 0, .5)
+
+.modal
+  display: flex
+  flex-direction: column
+  gap: 16px
+  width: 100%
+  max-width: 460px
+  padding: 24px
+  border-radius: 20px
+  background-color: var(--surface)
+  box-shadow: var(--shadow)
+
+.modalHead
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  h2
+    font-size: 22px
+
+.close
+  display: grid
+  place-items: center
+  width: 38px
+  height: 38px
+  border: 0
+  border-radius: 10px
+  color: var(--text-2)
+  background: none
+
+  &:hover
+    background-color: var(--surface-hover)
+
+.summary
+  display: flex
+  align-items: center
+  gap: 14px
+  padding: 12px
+  border-radius: 14px
+  background-color: var(--bg-soft)
+
+  img
+    width: 64px
+    height: 64px
+    border-radius: 10px
+
+  div
+    display: flex
+    flex-direction: column
+
+  strong
+    font-weight: 700
+
+  span
+    color: var(--text-2)
+    font-size: 14px
+
+.lines
+  display: flex
+  flex-direction: column
+  gap: 10px
+  margin: 0
+
+  div
+    display: flex
+    justify-content: space-between
+
+  dt
+    color: var(--text-2)
+
+  dd
+    margin: 0
+    font-weight: 600
+
+.total
+  padding-top: 12px
+  border-top: 1px solid var(--line)
+
+  dt
+    color: var(--text) !important
+    font-weight: 700
+
+  dd
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    font-size: 18px
+
+    small
+      color: var(--text-3)
+      font-size: 13px
+      font-weight: 500
+
+.field
+  display: flex
+  flex-direction: column
+  gap: 8px
+
+  > span
+    font-size: 14px
+    font-weight: 600
+
+  small
+    color: var(--text-3)
+    font-size: 13px
+
+.amount
+  display: flex
+  align-items: center
+  gap: 8px
+  padding: 0 14px
+  border: 1px solid var(--line-strong)
+  border-radius: 12px
+
+  &:focus-within
+    border-color: var(--accent)
+
+  input
+    flex: 1
+    min-width: 0
+    padding: 14px 0
+    border: 0
+    font-size: 18px
+    font-weight: 600
+    background: none
+    outline: 0
+
+  b
+    color: var(--text-3)
+
+.expiry
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 8px
+
+  button
+    padding: 10px 4px
+    border: 1px solid var(--line)
+    border-radius: 10px
+    font-size: 14px
+    font-weight: 600
+    background-color: var(--surface)
+
+  .expiryOn
+    border-color: var(--accent)
+    color: var(--accent)
+    background-color: var(--accent-soft)
+
+.error
+  padding: 10px 12px
+  border-radius: 10px
+  color: var(--down)
+  font-size: 14px
+  background-color: rgba(229, 72, 77, .1)
+
+.success
+  display: flex
+  align-items: center
+  gap: 10px
+  font-weight: 600
+
+  svg
+    flex-shrink: 0
+    color: var(--up)
+
+.fine
+  color: var(--text-3)
+  font-size: 13px
+  text-align: center
+
+@media (max-width: 900px)
+  .layout
+    grid-template-columns: minmax(0, 1fr)
+
+  .rail
+    grid-auto-columns: 46%
