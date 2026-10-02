@@ -6,8 +6,8 @@ import { pixelPals } from './art/pixelPals'
 import { sonicWaves } from './art/sonicWaves'
 import { terraPlots } from './art/terraPlots'
 import type { ArtStyle, Traits } from './art/types'
-import { between, intBetween, pick, rngFor } from './rng'
-import { CREATORS, USERS, type User } from './users'
+import { between, intBetween, pick, rngFor, type Rng } from './rng'
+import { ANONYMOUS, CREATORS, USERS, type User } from './users'
 
 export type CategorySlug = 'pfps' | 'art' | 'gaming' | 'virtual-worlds' | 'music'
 
@@ -103,15 +103,19 @@ const build = (def: CollectionDef): Collection => {
     return def.base * (1 + pct ** 4 * 7) * between(rngFor(def.slug, 'value', tokenId), 0.95, 1.2)
   }
 
+  // Who trades this collection: some named collectors, mostly anonymous wallets
+  const start = intBetween(rngFor(def.slug, 'holders'), 0, ANONYMOUS.length - 1)
+  const holders = Array.from({ length: Math.round(def.size * 0.65) }, (_, i) => ANONYMOUS[(start + i * 7) % ANONYMOUS.length])
+  const trader = (r: Rng) => (r() < 0.25 ? pick(r, USERS) : pick(r, holders)).id
+
   const market = rngFor(def.slug, 'market')
   const sales: Sale[] = []
-  const salesCount = Math.round(def.size * def.liquidity)
+  const salesCount = Math.round(def.size * def.liquidity * 3)
   for (let i = 0; i < salesCount; i++) {
     const tokenId = intBetween(market, 1, def.size)
-    // More trading lately: ages lean toward the last few days
-    const ageHours = round(90 * 24 * market() ** 1.8, 2)
-    const trend = 1 + (1 - ageHours / (90 * 24)) * 0.15
-    sales.push({ tokenId, price: round(value(tokenId) * between(market, 0.82, 1.12) * trend), ageHours, from: pick(market, USERS).id, to: pick(market, USERS).id })
+    const ageHours = round(90 * 24 * market(), 2)
+    const trend = 1 + (1 - ageHours / (90 * 24)) * 0.12
+    sales.push({ tokenId, price: round(value(tokenId) * between(market, 0.82, 1.12) * trend), ageHours, from: trader(market), to: trader(market) })
   }
   sales.sort((a, b) => a.ageHours - b.ageHours)
 
@@ -126,7 +130,7 @@ const build = (def: CollectionDef): Collection => {
       traits,
       rank: ranks.get(tokenId)!,
       // The last buyer still owns it; otherwise whoever minted it
-      ownerId: last?.to ?? pick(r, USERS).id,
+      ownerId: last?.to ?? trader(r),
       price: listed ? round(v * between(r, 1.0, 1.35)) : null,
       listingDays: intBetween(r, 1, 30),
       bestOffer: r() < 0.45 ? round(v * between(r, 0.7, 0.92)) : null,
@@ -155,11 +159,12 @@ const build = (def: CollectionDef): Collection => {
       listed: listedPrices.length,
       owners: new Set(items.map((i) => i.ownerId)).size,
       // Includes the mint and trading before these 90 days
-      volume: round(vol(0, Infinity) * 3.4 + def.size * def.base * 0.6, 2),
+      volume: round(vol(0, Infinity) * 2.2 + def.size * def.base * 0.6, 2),
       volume24h: round(v24, 3),
       volume7d: round(v7, 3),
-      change24h: change(v24, vol(24, 48)),
-      change7d: change(v7, vol(168, 336)),
+      // Against the average day (or week) before, which is steadier than a single day
+      change24h: change(v24, vol(24, 192) / 7),
+      change7d: change(v7, vol(168, 672) / 3),
       sales24h: within(0, 24).length,
     },
   }
@@ -177,7 +182,8 @@ export const getItem = (slug: string, tokenId: number) => {
   return collection && item ? { collection, item } : null
 }
 
-export const getUser = (id: string) => USERS.find((u) => u.id === id) ?? Object.values(CREATORS).find((u) => u.id === id) ?? null
+export const getUser = (id: string) =>
+  USERS.find((u) => u.id === id) ?? ANONYMOUS.find((u) => u.id === id) ?? Object.values(CREATORS).find((u) => u.id === id) ?? null
 
 /** Draws an item's art as an SVG string */
 export const drawItem = (slug: string, tokenId: number) => {
