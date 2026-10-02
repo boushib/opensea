@@ -25,7 +25,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" data-theme="light" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Runs on the server-rendered page only; as text/plain on the client React doesn't warn about it */}
+        <script type={typeof window === 'undefined' ? 'text/javascript' : 'text/plain'} suppressHydrationWarning dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         <Providers>
