@@ -9,6 +9,7 @@ import Search from './Search'
 import type { SearchCollection } from '@/lib/searchIndex'
 import ThemeToggle from './ThemeToggle'
 import WalletButton from '@/components/wallet/WalletButton'
+import Notifications from '@/components/wallet/Notifications'
 import styles from './Header.module.sass'
 
 const LINKS = [
@@ -50,6 +51,7 @@ const Header = ({ collections }: { collections: SearchCollection[] }) => {
           <span className={styles.headerTheme}>
             <ThemeToggle />
           </span>
+          <Notifications />
           <WalletButton />
           <button type="button" className={`${styles.iconButton} ${styles.menuButton}`} onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
             {open ? <X size={20} /> : <Menu size={20} />}
