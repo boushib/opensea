@@ -71,6 +71,10 @@ Everything comes from seeded random numbers (`lib/rng.ts`), so it's the same on 
 - **Prices, owners, listings, offers and 90 days of sales** (`lib/catalog.ts`) are generated around each collection's base price, with rarer items worth more. Stats like floor, volume, owners and 24h change are calculated from them.
 - What you do with a wallet (purchases, offers, favorites) is saved in your browser, per wallet address (`lib/market.ts`).
 
+## Roadmap
+
+Trading is simulated: there are no smart contracts yet, and activity is saved in your browser. [docs/ROADMAP.md](docs/ROADMAP.md) describes the on-chain version (ERC-721 contracts and Seaport on Sepolia, plus an order book and an indexer) for later.
+
 ## Getting started
 
 Requires Node.js 20.9+ and pnpm.
