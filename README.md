@@ -4,6 +4,8 @@
 
 **An NFT marketplace clone: browse collections, filter items by trait, and buy or make offers with a real wallet on the Sepolia test network, or a built-in demo wallet.**
 
+**[▶ Open the live demo](https://opensea-e573.onrender.com)**
+
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
