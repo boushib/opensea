@@ -71,12 +71,12 @@ It runs entirely on its own: no database, no API keys and no NFT API. Seven made
 
 Everything comes from seeded random numbers (`lib/rng.ts`), so it's the same on every visit:
 
-- Each collection has an **art style** (`lib/art/`) that picks an item's traits from weighted options and draws it as SVG. Art is served at `/art/<collection>/<token>` and cached forever.
+- Each collection has an **art style** (`lib/art/`) that picks an item's traits from weighted options and draws it as SVG. Every item's art is drawn at build time and saved as `/art/<collection>/<token>.svg`.
 - **Rarity** comes from how often each trait value appears; rank 1 is the rarest item.
 - **Prices, owners, listings, offers and 90 days of sales** (`lib/catalog.ts`) are generated around each collection's base price, with rarer items worth more. Stats like floor, volume, owners and 24h change are calculated from them.
 - What you do with a wallet (purchases, listings, offers, bids, created collections, favorites, notifications) is saved in your browser, per wallet address (`lib/market.ts`).
 - **Auctions** (`lib/auctions.ts`) run on repeating cycles; each run's rival bids come from its seed, and rivals counter your bids up to a hidden ceiling.
-- **Created collections** keep their art style and a seed in the slug (like `c-moonfolk--k3j9x2`), so the server can draw every item without storing anything.
+- **Created collections** keep their art style and a seed in the slug (like `c-moonfolk--k3j9x2`), so every item can be drawn from the slug alone. Their pages (`/created?c=…`, `/created/item?c=…&t=…`) and art are drawn in the browser, since they can't be built ahead of time.
 
 ## Roadmap
 
@@ -100,7 +100,7 @@ To use your own wallet, install [MetaMask](https://metamask.io/download/) (or an
 | Script | What it does |
 | --- | --- |
 | `pnpm dev` | Dev server |
-| `pnpm build` / `pnpm start` | Production build and server |
+| `pnpm build` | Static build of the whole site in `out/`: every page, item and profile, plus the art |
 | `pnpm lint` | ESLint (flat config) |
 | `pnpm typecheck` | Route types and TypeScript, no emit |
 | `pnpm dev:agent` / `pnpm build:agent` | The same on port 3500 with their own build folders, so a second server doesn't clash with yours |
@@ -108,7 +108,7 @@ To use your own wallet, install [MetaMask](https://metamask.io/download/) (or an
 ## Project structure
 
 ```
-app/                  Pages (home, explore, rankings, collection, item, auctions, create, account, user, search) and the /art route
+app/                  Pages (home, explore, rankings, collection, item, auctions, create, account, user, search) and the /art files, all built ahead of time
 components/           Layout, cards, collection, item, auction, cart, create, wallet and account UI
 lib/art/              One SVG art style per collection
 lib/catalog.ts        Collections, items, owners, prices and sales, built from seeds
