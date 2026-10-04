@@ -7,9 +7,9 @@ const COLUMNS = [
     title: 'Marketplace',
     links: [
       { href: '/explore', label: 'All collections' },
-      { href: '/explore?category=art', label: 'Art' },
-      { href: '/explore?category=gaming', label: 'Gaming' },
-      { href: '/explore?category=pfps', label: 'Profile pictures' },
+      { href: '/explore/art', label: 'Art' },
+      { href: '/explore/gaming', label: 'Gaming' },
+      { href: '/explore/pfps', label: 'Profile pictures' },
     ],
   },
   {

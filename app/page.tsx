@@ -106,7 +106,7 @@ export default function Home() {
             const inCat = collections.filter((c) => c.category === cat.slug)
             const tiles = inCat.flatMap((c) => [...c.items].sort((a, b) => a.rank - b.rank).slice(0, 4).map((i) => artUrl(c.slug, i.tokenId))).slice(0, 4)
             return (
-              <Link key={cat.slug} href={`/explore?category=${cat.slug}`} className={styles.category}>
+              <Link key={cat.slug} href={`/explore/${cat.slug}`} className={styles.category}>
                 <div className={styles.categoryArt}>
                   {tiles.map((src) => (
                     <img key={src} src={src} alt="" loading="lazy" />
