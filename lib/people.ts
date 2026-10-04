@@ -1,7 +1,8 @@
 import { getCollections, getUser, type Collection, type Item, type Sale } from './catalog'
 import { ANONYMOUS, CREATORS, USERS, type User } from './users'
 
-const everyone = (): User[] => [...USERS, ...ANONYMOUS, ...Object.values(CREATORS)]
+/** Everyone with a profile: collectors, anonymous holders and creators */
+export const everyone = (): User[] => [...USERS, ...ANONYMOUS, ...Object.values(CREATORS)]
 
 export const findByAddress = (address: string) => everyone().find((u) => u.address.toLowerCase() === address.toLowerCase()) ?? null
 
