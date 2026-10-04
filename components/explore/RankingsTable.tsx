@@ -1,5 +1,6 @@
 'use client'
 
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowDown, ArrowUp } from 'lucide-react'
@@ -34,7 +35,9 @@ const COLUMNS: Array<{ key: SortKey; label: string; hideSm?: boolean }> = [
 ]
 
 /** All collections, ranked by any column, for a chosen period */
-const RankingsTable = ({ rows, initialSort }: { rows: RankingRow[]; initialSort: SortKey }) => {
+const RankingsTable = ({ rows }: { rows: RankingRow[] }) => {
+  // ?sort=change opens on the top movers
+  const initialSort: SortKey = useSearchParams().get('sort') === 'change' ? 'change' : 'volume'
   const [period, setPeriod] = useState<Period>('24h')
   const [sort, setSort] = useState<SortKey>(initialSort)
   const [desc, setDesc] = useState(true)

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { ArrowRightLeft, Check, Copy, HandCoins, ShoppingCart, Tag, Wallet as WalletIcon } from 'lucide-react'
 import ItemCard from '@/components/ui/ItemCard'
 import { useWallet } from '@/components/wallet/WalletProvider'
@@ -25,7 +26,11 @@ const LABELS: Record<Tab, string> = { collected: 'Collected', created: 'Created'
 const when = (iso: string) => new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
 /** The connected wallet's items, favorites, offers and activity */
-const AccountView = ({ tab, collections }: { tab: Tab; collections: Record<string, CollectionMeta> }) => {
+const TABS: Tab[] = ['collected', 'created', 'listings', 'offers', 'received', 'favorites', 'activity']
+
+const AccountView = ({ collections }: { collections: Record<string, CollectionMeta> }) => {
+  const requested = useSearchParams().get('tab')
+  const tab = TABS.find((t) => t === requested) ?? 'collected'
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const [copied, setCopied] = useState(false)

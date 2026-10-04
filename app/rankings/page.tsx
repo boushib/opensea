@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import RankingsTable, { type RankingRow } from '@/components/explore/RankingsTable'
 import { CATEGORIES, getCollections } from '@/lib/catalog'
 import { artUrl } from '@/lib/urls'
@@ -6,8 +7,7 @@ import styles from '@/components/explore/Explore.module.sass'
 
 export const metadata: Metadata = { title: 'Collection rankings' }
 
-export default async function Rankings({ searchParams }: PageProps<'/rankings'>) {
-  const { sort } = await searchParams
+export default function Rankings() {
   const rows: RankingRow[] = getCollections().map((c) => {
     const within = (hours: number) => c.sales.filter((s) => s.ageHours < hours)
     return {
@@ -33,7 +33,9 @@ export default async function Rankings({ searchParams }: PageProps<'/rankings'>)
         <h1>Collection rankings</h1>
         <p>Top collections by volume, floor price and more. Click a column to sort.</p>
       </header>
-      <RankingsTable rows={rows} initialSort={sort === 'change' ? 'change' : 'volume'} />
+      <Suspense>
+        <RankingsTable rows={rows} />
+      </Suspense>
     </div>
   )
 }
