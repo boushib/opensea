@@ -8,9 +8,7 @@ import PriceChart from '@/components/item/PriceChart'
 import ItemCard from '@/components/ui/ItemCard'
 import Verified from '@/components/ui/Verified'
 import { getAuctionLot } from '@/lib/auctionLots'
-import CreatedItem from '@/components/create/CreatedItem'
-import { createdTraits, getItem, getUser } from '@/lib/catalog'
-import { parseCreated } from '@/lib/created'
+import { getCollections, getItem, getUser } from '@/lib/catalog'
 import { ago, count, eth } from '@/lib/format'
 import { itemDetails } from '@/lib/itemDetails'
 import { person } from '@/lib/people'
@@ -19,9 +17,12 @@ import { shortAddress } from '@/lib/users'
 import { artUrl } from '@/lib/urls'
 import styles from '@/components/item/Item.module.sass'
 
+// Every catalog item is built ahead of time (items in collections you create live at /created/item)
+export const dynamicParams = false
+export const generateStaticParams = () => getCollections().flatMap((c) => c.items.map((i) => ({ slug: c.slug, token: String(i.tokenId) })))
+
 export async function generateMetadata({ params }: PageProps<'/item/[slug]/[token]'>): Promise<Metadata> {
   const { slug, token } = await params
-  if (parseCreated(slug)) return { title: `Item #${token}` }
   const found = getItem(slug, Number(token))
   return found ? { title: found.item.name, description: found.collection.description } : {}
 }
@@ -36,11 +37,6 @@ const EVENT = {
 
 export default async function ItemPage({ params }: PageProps<'/item/[slug]/[token]'>) {
   const { slug, token } = await params
-  if (parseCreated(slug)) {
-    const traits = createdTraits(slug, Number(token))
-    if (!traits) notFound()
-    return <CreatedItem slug={slug} tokenId={Number(token)} traits={traits} />
-  }
   const found = getItem(slug, Number(token))
   if (!found) notFound()
   const { collection: c, item } = found

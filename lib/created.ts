@@ -1,6 +1,6 @@
 /**
  * Collections you create live in your browser (see useMarket). Their slug carries the art
- * style and a seed, like "c-moonfolk--k3j9x2", so the server can draw any item without storage.
+ * style and a seed, like "c-moonfolk--k3j9x2", so any item can be drawn from the slug alone, with no storage.
  */
 export type Creation = {
   slug: string
@@ -35,4 +35,7 @@ export const parseCreated = (slug: string) => {
   return m && STYLES.some((s) => s.slug === m[1]) ? { style: m[1], seed: m[2] } : null
 }
 
-export const createdUrl = (slug: string) => `/created/${slug}`
+// The collection and its items are pages that read the slug from the URL in the browser, since they can't be pre-built
+export const createdUrl = (slug: string) => `/created?${new URLSearchParams({ c: slug })}`
+
+export const createdItemUrl = (slug: string, tokenId: number) => `/created/item?${new URLSearchParams({ c: slug, t: String(tokenId) })}`

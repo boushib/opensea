@@ -2,7 +2,7 @@
 
 import { useSyncExternalStore } from 'react'
 import type { Bid } from './auctions'
-import type { Creation } from './created'
+import { createdUrl, type Creation } from './created'
 import { itemName } from './names'
 import { hash } from './rng'
 
@@ -192,7 +192,7 @@ export const useMarket = (address: string | null) => {
           ...s,
           purchases: [...minted, ...s.purchases],
           creations: s.creations.map((x) => (x === c ? { ...x, minted: x.minted + n } : x)),
-          notes: [note({ kind: 'minted', title: `Minted ${n} from ${c.name}`, body: `${n === 1 ? 'It’s' : 'They’re'} in your wallet now.`, href: `/created/${slug}`, at }), ...s.notes].slice(0, 50),
+          notes: [note({ kind: 'minted', title: `Minted ${n} from ${c.name}`, body: `${n === 1 ? 'It’s' : 'They’re'} in your wallet now.`, href: createdUrl(slug), at }), ...s.notes].slice(0, 50),
         }
       }),
     cancelCollectionOffer: (slug: string) => update((s) => ({ ...s, collectionOffers: s.collectionOffers.filter((x) => x.slug !== slug) })),

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { Minus, Plus, Sparkles } from 'lucide-react'
 import ItemCard from '@/components/ui/ItemCard'
 import ExpandableText from '@/components/ui/ExpandableText'
@@ -14,8 +15,9 @@ import { artUrl } from '@/lib/urls'
 import header from '@/components/collection/Collection.module.sass'
 import styles from './Create.module.sass'
 
-/** A collection you created: mint more items and see the ones you've minted */
-const CreatedCollection = ({ slug }: { slug: string }) => {
+/** A collection you created, named by ?c=<slug>: mint more items and see the ones you've minted */
+const CreatedCollection = () => {
+  const slug = useSearchParams().get('c') ?? ''
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const c = market.creationOf(slug)

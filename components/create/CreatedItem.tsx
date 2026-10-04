@@ -1,18 +1,32 @@
 'use client'
 
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import ItemActions from '@/components/item/ItemActions'
 import { useWallet } from '@/components/wallet/WalletProvider'
+import { createdTraits } from '@/lib/art/draw'
 import { createdUrl } from '@/lib/created'
 import { useMarket } from '@/lib/market'
 import { artUrl } from '@/lib/urls'
 import styles from '@/components/item/Item.module.sass'
 
-/** An item from a collection someone created in this browser */
-const CreatedItem = ({ slug, tokenId, traits }: { slug: string; tokenId: number; traits: Record<string, string> }) => {
+/** An item from a collection someone created in this browser, named by ?c=<slug>&t=<token> */
+const CreatedItem = () => {
+  const params = useSearchParams()
+  const slug = params.get('c') ?? ''
+  const tokenId = Number(params.get('t'))
+  const traits = createdTraits(slug, tokenId)
   const wallet = useWallet()
   const market = useMarket(wallet.address)
   const c = market.creationOf(slug)
+
+  if (!traits)
+    return (
+      <div className={`container ${styles.page}`}>
+        <h1>Item not found</h1>
+      </div>
+    )
+
   const minted = !!c && tokenId <= c.minted
   const collectionName = c?.name ?? 'Created collection'
   const name = `${collectionName} #${tokenId}`

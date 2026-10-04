@@ -6,7 +6,6 @@ import { pixelPals } from './art/pixelPals'
 import { sonicWaves } from './art/sonicWaves'
 import { terraPlots } from './art/terraPlots'
 import type { ArtStyle, Traits } from './art/types'
-import { MAX_SUPPLY, parseCreated } from './created'
 import { between, intBetween, pick, rngFor, type Rng } from './rng'
 import { ANONYMOUS, CREATORS, USERS, type User } from './users'
 
@@ -190,22 +189,9 @@ export const getItem = (slug: string, tokenId: number) => {
 export const getUser = (id: string) =>
   USERS.find((u) => u.id === id) ?? ANONYMOUS.find((u) => u.id === id) ?? Object.values(CREATORS).find((u) => u.id === id) ?? null
 
-/** The art style behind a slug, for both catalog and user-created collections */
-const styleFor = (slug: string, tokenId: number) => {
-  const created = parseCreated(slug)
-  const def = DEFS.find((d) => d.slug === (created ? created.style : slug))
-  const size = created ? MAX_SUPPLY : def?.size ?? 0
-  return def && Number.isInteger(tokenId) && tokenId >= 1 && tokenId <= size ? def.style : null
-}
-
-/** Draws an item's art as an SVG string */
+/** Draws a catalog item's art as an SVG string (created collections are drawn in the browser, see art/draw) */
 export const drawItem = (slug: string, tokenId: number) => {
-  const style = styleFor(slug, tokenId)
+  const def = DEFS.find((d) => d.slug === slug)
+  const style = def && Number.isInteger(tokenId) && tokenId >= 1 && tokenId <= def.size ? def.style : null
   return style && style.draw(style.traits(rngFor(slug, 'traits', tokenId)), rngFor(slug, 'art', tokenId))
-}
-
-/** An item's traits in a collection someone created */
-export const createdTraits = (slug: string, tokenId: number) => {
-  const style = parseCreated(slug) && styleFor(slug, tokenId)
-  return style ? style.traits(rngFor(slug, 'traits', tokenId)) : null
 }
